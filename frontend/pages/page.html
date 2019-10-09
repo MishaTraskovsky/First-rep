@@ -18,66 +18,8 @@
 
 <body>
 
-<div id="app">
-Json API 2
-{{ info }}
-</div>
-
-<!------------------------------------- Widget TABLE  ----------------------------->
-<table id="userTable" class="table">
-  	<thead>
-	    <tr>
-	      <th>ID</th>
-	      <th>Login</th>
-	      <th>Email</th>
-	    </tr>
-  	</thead>
-	<tbody>
-	    <tr v-for="row in result">
-	      <td>{{row.id}}</td>
-	      <td>{{row.login}}</td>
-	      <td>{{row.email}}</td>
-	    </tr>
-	</tbody>
-</table>
-<!------------------------------------- Widget TABLE  ----------------------------->
-
 
 </body>
-
-
-<script type="text/javascript">
-
-	// https://www.developerdrive.com/creating-a-data-table-in-vue-js/
-	
-	var app = new Vue({
-	  el: '#app',
-	  data() {
-	  	return {
-	  		info: null
-	  	};
-	  },
-	  mounted() {
-	    axios
-	    .post('https://g2.qzo.su/api/auth/example').then(response => {
-
-	   		this.info = response.data;
-	   		//widget table
-	   		var userTable = new Vue({
-			  el: '#userTable',
-			  data: response.data,
-			});
-			//widget table
-	   		
-	    });
-	  }
-
-	});
-
-
-</script>
-
-
 
 
 </html>
