@@ -8,7 +8,7 @@
 
 class PublicUsersController {
 
-public function test(){ echo 1; }
+public function gettest(){ echo $_GET["id"]; }
     
 
 }
