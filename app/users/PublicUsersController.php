@@ -8,7 +8,10 @@
 
 class PublicUsersController {
 
-public function gettest(){ echo $_GET["id"]; }
+public function gettest(){ 
+    $class = new Users();
+    $class->test2();
+    
     
 
 }
