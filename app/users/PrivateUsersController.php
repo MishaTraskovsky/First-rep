@@ -7,7 +7,7 @@
  * branch b1
  */
 
-class PrivateAuthController {
+class PrivateUsersController {
 
     public function example(){ echo (new Authorization())->example(); }
 
