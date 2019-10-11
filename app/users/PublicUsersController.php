@@ -6,12 +6,10 @@
  * Has a config in /core/config/database.php
  */
 
-class PublicUsersController {
+class PublicUsersController{
 
 public function gettest(){ 
     $class = new Users();
-    $class->test2();
-    
-    
-
+    $class -> test2 ();
+}
 }
