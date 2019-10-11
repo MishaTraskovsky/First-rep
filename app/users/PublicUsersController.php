@@ -12,6 +12,4 @@ public function example(){ echo 1; }
     
 
 }
-    
-}
 ?>
