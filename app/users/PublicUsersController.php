@@ -8,7 +8,7 @@
 
 class PublicUsersController {
 
-public function example(){ echo 1; }
+public function test(){ echo 1; }
     
 
 }
