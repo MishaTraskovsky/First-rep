@@ -7,3 +7,4 @@ class Users extends Model{
 			         'id3' => '3',);
         echo json_incode($ar);
         }
+}
