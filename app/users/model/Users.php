@@ -45,6 +45,16 @@ class Users extends Model{
                                                    "gender" => $_GET["gender"],
                                                    "other_data" => $_GET["other_data"]), array("id" => $_GET["id"]))->send();
         }
+    
+        public function update_user_cards(){
+            Model::table("user_cards")->edit(array( "level" => $_GET["level"],
+                                                    "user_type" => $_GET["user_type"],
+                                                    "image" => $_GET["image"],
+                                                    "nickname" => $_GET["nickname"],
+                                                    "rating" => $_GET["rating"],
+                                                    "description" => $_GET["description"), array("id" => $_GET["id"]))->send();
+        }
+
 
 
 }
