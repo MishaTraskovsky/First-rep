@@ -70,9 +70,7 @@ class Users extends Model{
         public function view_bd() {
         $bd1 = Model::table("users_cards")->get()->send();
         $bd2 = Model::table("users_person_data")->get()->send();
-        $this->viewJSON($bd1);
-        echo "<br>"
-        $this->viewJSON($bd2);
+        $this->viewJSON($bd1, $bd2);
         }
         }
 
