@@ -6,11 +6,11 @@
 
 self::$config['database'] = array(
     'hostname' => 'localhost',
-    'username' => 'g2_login_db',
-    'password' => '*wB^,=(,6a$t',
-    'dbname' => 'db_g2'
+    'username' => 'm_login',
+    'password' => 'm_QWsr67jn',
+    'dbname' => 'm_db'
 );
 
 self::$config['salt'] = "dlkcmdfv(4&*4mvnKDNAP)_)kdldi12cdl::L847GTe]|";
 
-?>
+?>  

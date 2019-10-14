@@ -9,7 +9,7 @@
 class PublicUsersController{
 
     public function gettest(){ 
-    $this->viewJSON($ar);
+    echo $this->viewJSON($ar);
     //$class = new Users();
     //$class -> test2 ();
     }
