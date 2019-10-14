@@ -66,4 +66,15 @@ class Users extends Model{
         public function del_users_person_data(){
             Model::table("users_person_data")->delete(array("id" => $_GET["id"]))->send();;
         }
+        
+        public function view_users_cards_for_id() {
+            $stmt = self::$db->prepare("SELECT `id`, `level`, `user_type`, `image`, `nickname`, `rating`, `description`, `id_parent` FROM  `users_cards` WHERE id= :id");
+
+            $result_query = $stmt->execute(array(":id" => self::$params_url['id']));
+
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+
+            $this->viewJSON($rows);
+        }
+
 }
