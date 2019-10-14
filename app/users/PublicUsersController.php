@@ -8,8 +8,8 @@
 
 class PublicUsersController{
 
-public function gettest(){ 
+    public function gettest(){ 
     $class = new Users();
     $class -> test2 ();
-}
+    }
 }
