@@ -9,6 +9,7 @@ class Users extends Model{
 
         );
         $a = viewJSON($ar);
+        echo $a;
         //Model::table("users_person_data")->get()->send()
         }
 }
