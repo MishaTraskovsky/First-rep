@@ -34,7 +34,7 @@ class PublicUsersController{
     public function update_user_cards(){ 
     $class = new Users();
     $class -> update_user_cards(); 
-    //$class -> view_users_cards();
+    $class -> view_users_cards();
         
     //level=3&user_type=user&image=0&nickname=nik&rating=2&description=text1$id=1        
     }
