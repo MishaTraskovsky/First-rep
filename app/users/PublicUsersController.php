@@ -53,8 +53,7 @@ class PublicUsersController{
     
     public function view_bd(){ 
     $class = new Users();
-    $class -> view_users_cards();   
-    $class -> view_users_person_data();    
+    $class -> view_users_cards();     
 }
 }
     
