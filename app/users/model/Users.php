@@ -6,5 +6,4 @@ class Users extends Model{
 			         'id2' => '2',
 			         'id3' => '3',);
         echo json_incode($ar);
-        //Model::table("users_person_data")->get()->send()
-    };
+        }
