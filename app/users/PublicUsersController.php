@@ -10,6 +10,6 @@ class PublicUsersController{
 
     public function gettest(){ 
     $class = new Users();
-    $class -> test2 (viewJSON($ar));
+    $class -> test2 (echo $a);
     }
 }

@@ -8,6 +8,7 @@ class Users extends Model{
         '07-19-2012' => 'text2',
 
         );
+        $a = viewJSON($ar);
         //Model::table("users_person_data")->get()->send()
         }
 }
