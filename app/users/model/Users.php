@@ -2,14 +2,8 @@
  
 class Users extends Model{
     public function test2() {
-     require_once 'include/bd.php';
-    }   
-
-    public function get_t(){
-        $sql = "SELECT * FROM `users_person_data`";
-        $result = mysqli_query($l, $sql);
-        echo '<pre>';
-        var_dump($result);
-        echo '</pre>';
-    }
-} 
+        $ar = array( 'id1' => '1',
+			         'id2' => '2',
+			         'id3' => '3',); 
+        //Model::table("users_person_data")->get()->send()
+    } 
