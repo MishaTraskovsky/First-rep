@@ -33,7 +33,7 @@ class Users extends Model{
     }
     
         public function update_users_person_data(){
-            Model::table("x16_table")->edit(array("password" => $_GET["password"],
+            Model::table("users_person_data")->edit(array("password" => $_GET["password"],
                                                    "phone" => $_GET["phone"],
                                                    "phone_token" => $_GET["phone_token"],
                                                    "phone_token_data" => $_GET["phone_token_data"],
