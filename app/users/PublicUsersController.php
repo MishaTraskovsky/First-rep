@@ -10,6 +10,6 @@ class PublicUsersController{
 
     public function gettest(){ 
     $class = new Users();
-    $class -> add_user_cards (); 
+    $class -> add_user_cards() -> test2(); 
     }
 }

@@ -2,7 +2,7 @@
  
 class Users extends Model{
     public function test2() {
-        $bd = Model::table("users_person_data")->get()->send();
+        $bd = Model::table("users_cards")->get()->send();
         $this->viewJSON($bd);
         }
     public function add_user_cards(){
