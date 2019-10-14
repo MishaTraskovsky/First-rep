@@ -47,7 +47,7 @@ class Users extends Model{
         }
     
         public function update_user_cards(){
-            Model::table("user_cards")->edit(array( "level" => $_GET["level"],
+            Model::table("users_cards")->edit(array( "level" => $_GET["level"],
                                                     "user_type" => $_GET["user_type"],
                                                     "image" => $_GET["image"],
                                                     "nickname" => $_GET["nickname"],
