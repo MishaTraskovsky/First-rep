@@ -14,7 +14,17 @@ class Users extends Model{
     }
     
     public function add_users_person_data(){
-        Model::table("users_person_data")->add(array("password" => $_GET["password"], "phone" => $_GET["phone"], "phone_token" => $_GET["phone_token"], "phone_token_data" => $_GET["phone_token_data"], "doc_photo" => $_GET["doc_photo"], "surname" => $_GET["surname"], "name" => $_GET["name"], "patronymic" => $_GET["patronymic"], "date_of_birth" => $_GET["date_of_birth"], "gender" => $_GET["gender"], "other_data" => $GET["other_data"]))->send();      
+        Model::table("users_person_data")->add(array("password" => $_GET["password"],
+                                                     "phone" => $_GET["phone"],
+                                                     "phone_token" => $_GET["phone_token"],
+                                                     "phone_token_data" => $_GET["phone_token_data"],
+                                                     "doc_photo" => $_GET["doc_photo"],
+                                                     "surname" => $_GET["surname"],
+                                                     "name" => $_GET["name"],
+                                                     "patronymic" => $_GET["patronymic"],
+                                                     "date_of_birth" => $_GET["date_of_birth"],
+                                                     "gender" => $_GET["gender"],
+                                                     "other_data" => $GET["other_data"]))->send();      
     }
 
 }
