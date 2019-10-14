@@ -9,8 +9,7 @@
 class PublicUsersController{
 
     public function gettest(){ 
-    echo $this;
-    //$class = new Users();
-    //$class -> test2 ();
+    $class = new Users();
+    $class -> test2 ();
     }
 }
