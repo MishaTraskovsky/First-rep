@@ -10,6 +10,6 @@ class Users extends Model{
         $result = mysqli_query($l, $sql);
         echo '<pre>';
         var_dump($result)
-        echo '<pre>';
+        echo '</pre>';
     }
 } 
