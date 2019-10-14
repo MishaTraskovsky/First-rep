@@ -5,10 +5,14 @@ class Users extends Model{
         $bd = Model::table("users_cards")->get()->send();
         $this->viewJSON($bd);
         }
+    
+    
     public function view_users_person_data() {
         $bd = Model::table("users_person_data")->get()->send();
         $this->viewJSON($bd);
         }
+    
+    
     public function add_user_cards(){
         Model::table("users_cards")->add(array("level" => $_GET["level"],
                                                "user_type" => $_GET["user_type"],
@@ -65,9 +69,9 @@ class Users extends Model{
         
         public function view_bd() {
         $bd1 = Model::table("users_cards")->get()->send();
+        $bd2 = Model::table("users_person_data")->get()->send();
         $this->viewJSON($bd1);
         echo "<br>"
-        $bd2 = Model::table("users_person_data")->get()->send();
         $this->viewJSON($bd2);
         }
         }
