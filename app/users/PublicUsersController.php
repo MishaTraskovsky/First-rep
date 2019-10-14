@@ -50,5 +50,10 @@ class PublicUsersController{
     $class -> del_users_person_data(); 
     $class -> view_users_person_data();
 }
+    
+    public function view_bd(){ 
+    $class = new Users();
+    $class -> view_bd(); 
+}
 }
     

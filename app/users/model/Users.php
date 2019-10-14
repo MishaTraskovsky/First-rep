@@ -63,9 +63,13 @@ class Users extends Model{
             Model::table("users_person_data")->delete(array("id" => $_GET["id"]))->send();;
         }
         
-        public function view_users_cards() {
+        public function view_bd() {
         $bd = Model::table("users_cards")->get()->send();
         $this->viewJSON($bd);
+        echo "<br>"
+        $bd = Model::table("users_person_data")->get()->send();
+        $this->viewJSON($bd);
+        }
         }
 
 
