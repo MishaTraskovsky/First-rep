@@ -4,12 +4,14 @@ class Users extends Model{
     public function view_users_cards() {
         $bd = Model::table("users_cards")->get()->send();
         $this->viewJSON($bd);
+        echo "<br>";
         }
     
     
     public function view_users_person_data() {
         $bd = Model::table("users_person_data")->get()->send();
         $this->viewJSON($bd);
+        echo "<br>";
         }
     
     
