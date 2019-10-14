@@ -9,7 +9,7 @@ class Users extends Model{
         $sql = "SELECT * FROM `users_cards`";
         $result = mysqli_query($l, $sql);
         echo '<pre>';
-        var_dump($result)
+        var_dump($result);
         echo '</pre>';
     }
 } 
