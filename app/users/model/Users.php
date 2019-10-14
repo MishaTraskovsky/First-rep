@@ -73,6 +73,3 @@ class Users extends Model{
         $this->viewJSON($bd1, $bd2);
         }
         }
-
-
-}
