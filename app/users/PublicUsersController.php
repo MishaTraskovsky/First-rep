@@ -50,5 +50,5 @@ class PublicUsersController{
     $class -> del_users_person_data(); 
     $class -> view_users_person_data();
 }
- 
-?>   
+    
+    
