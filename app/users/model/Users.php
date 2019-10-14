@@ -6,7 +6,7 @@ class Users extends Model{
     }   
 
     public function get_t(){
-        $sql = "SELECT * FROM `users_cards`";
+        $sql = "SELECT * FROM `users_person_data`";
         $result = mysqli_query($l, $sql);
         echo '<pre>';
         var_dump($result);
