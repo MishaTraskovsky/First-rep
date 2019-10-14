@@ -52,7 +52,7 @@ class Users extends Model{
                                                     "image" => $_GET["image"],
                                                     "nickname" => $_GET["nickname"],
                                                     "rating" => $_GET["rating"],
-                                                    "description" => $_GET["description"), array("id" => $_GET["id"]))->send();
+                                                    "description" => $_GET["description"]), array("id" => $_GET["id"]))->send();
         }
 
 
