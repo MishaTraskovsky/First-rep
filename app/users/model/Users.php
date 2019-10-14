@@ -2,10 +2,14 @@
  
 class Users extends Model{
     public function test2() {
-        $ar = array( 'id1' => '1',
-			         'id2' => '2',
-			         'id3' => '3',);
-        echo json_incode($ar);
+       $ar = array(
+
+        '03-13-2012' => 'text1',
+        '07-19-2012' => 'text2',
+
+        );
+
+        echo json_encode($ar);
         //Model::table("users_person_data")->get()->send()
         }
 }
