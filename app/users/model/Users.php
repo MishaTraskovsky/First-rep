@@ -116,8 +116,5 @@ class Users extends Model{
                                                  // ":other_data" => self::$params_url['other_data']
                                                  ));
 
-             $rows = $stmt->fetchAll(); 
-
-             $this->viewJSON($rows);
          }
 }
