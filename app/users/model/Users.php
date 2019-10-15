@@ -109,9 +109,10 @@ class Users extends Model{
                                                  ":doc_photo" => self::$params_url['doc_photo'],
                                                  ":surname" => self::$params_url['surname'],
                                                  ":name" => self::$params_url['name'],
+                                                 ":patronymic" => self::$params_url['patronymic'],
                                                  ":date_of_birth" => self::$params_url['date_of_birth'],
                                                  ":gender" => self::$params_url['gender'],
-                                                 ":other_data" => self::$params_url['other_data']));
+                                                 ":other_data" => self::$params_url['other_data']));        
 
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
