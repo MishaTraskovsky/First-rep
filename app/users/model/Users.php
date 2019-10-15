@@ -100,9 +100,10 @@ class Users extends Model{
         }
     
         public function ins_users_person_data_sql() {
-            $stmt = self::$db->prepare("INSERT INTO `users_person_data`(`password`, `phone`, `phone_token`, `phone_token_data`, `doc_photo`, `surname`, `name`, `patronymic`, `date_of_birth`, `gender`, `other_data`) VALUES (:password, :phone, :phone_token, :phone_token_data, :doc_photo, :surname :name, :patronymic, :date_of_birth, :gender, :other_data)");
+            $stmt = self::$db->prepare("INSERT INTO `users_person_data`(`id`, `password`, `phone`, `phone_token`, `phone_token_data`, `doc_photo`, `surname`, `name`, `patronymic`, `date_of_birth`, `gender`, `other_data`) VALUES (:id, :password, :phone, :phone_token, :phone_token_data, :doc_photo, :surname :name, :patronymic, :date_of_birth, :gender, :other_data)");
 
-            $result_query = $stmt->execute(array(":password" => self::$params_url['password'],
+            $result_query = $stmt->execute(array("id" => self::$params_url['id']
+                                                 ":password" => self::$params_url['password'],
                                                  ":phone" => self::$params_url['phone'],
                                                  ":phone_token" => self::$params_url['phone_token'],
                                                  ":phone_token_data" => self::$params_url['phone_token_data'],
