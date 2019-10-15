@@ -101,10 +101,19 @@ class Users extends Model{
     
          public function ins_users_person_data_sql() {
             
-             $stmt = self::$db->prepare("INSERT INTO `users_person_data`(`password`, `phone`) VALUES (:field_password, :phone)");
+             $stmt = self::$db->prepare("INSERT INTO `users_person_data`(`password`, `phone`, `phone_token`, `phone_token_data`, `doc_photo`, `surname`, `name`, `patronymic`, `date_of_birth`, `gender`, `other_data`) VALUES (:field_password, :phone)");
 
              $stmt->bindValue(":field_password", self::$params_url["password"], PDO::PARAM_STR);
              $stmt->bindValue(":phone", self::$params_url['phone'], PDO::PARAM_STR);
+             $stmt->bindValue(":phone_token", self::$params_url['phone_token'], PDO::PARAM_STR);
+             $stmt->bindValue(":phone_token_data", self::$params_url['phone_token_data'], PDO::PARAM_STR);
+             $stmt->bindValue(":doc_photo", self::$params_url['doc_photo'], PDO::PARAM_STR);
+             $stmt->bindValue(":surname", self::$params_url['surname'], PDO::PARAM_STR);
+             $stmt->bindValue(":name", self::$params_url['name'], PDO::PARAM_STR);
+             $stmt->bindValue(":patronymic", self::$params_url['patronymic'], PDO::PARAM_STR);
+             $stmt->bindValue(":date_of_birth", self::$params_url['date_of_birth'], PDO::PARAM_STR);
+             $stmt->bindValue(":gender", self::$params_url['gender'], PDO::PARAM_STR);
+             $stmt->bindValue(":other_data", self::$params_url['other_data'], PDO::PARAM_STR);
              $result_query = $stmt->execute();
                                                   
          }
