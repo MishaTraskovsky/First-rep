@@ -56,10 +56,14 @@ class PublicUsersController{
     $class -> view_users_cards();     
     }
     
-    public function view_users_cards_for_id(){ 
+    public function view_users_person_data_sql(){ 
     $class = new Users();
     $class -> view_users_cards_for_id();     
     }
     
+    public function view_users_cards_sql(){ 
+    $class = new Users();
+    $class -> view_users_cards_for_id();     
+    }
 }
     
