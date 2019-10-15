@@ -65,5 +65,11 @@ class PublicUsersController{
     $class = new Users();
     $class -> view_users_cards_sql();     
     }
+    
+    public function ins_users_person_data_sql(){ 
+    $class = new Users();
+    $class -> ins_users_person_data_sql();
+    $class -> view_users_cards_sql
+    }
 }
     
