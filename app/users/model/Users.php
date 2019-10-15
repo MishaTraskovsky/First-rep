@@ -99,26 +99,24 @@ class Users extends Model{
 
         }
     
-        public function ins_users_person_data_sql() {
-            $stmt = self::$db->prepare("INSERT INTO `users_person_data`(`id`, `password`, `phone`, `phone_token`, `phone_token_data`, `doc_photo`, `surname`, `name`, `patronymic`, `date_of_birth`, `gender`, `other_data`) VALUES (NULL, :password, :phone, :phone_token, :phone_token_data, :doc_photo, :surname :name, :patronymic, :date_of_birth, :gender, :other_data)");
+         public function ins_users_person_data_sql() {
+            
+             $stmt = self::$db->prepare("INSERT INTO `users_person_data`(`password`, `phone`, `phone_token`, `phone_token_data`, `doc_photo`, `surname`, `name`, `patronymic`, `date_of_birth`, `gender`, `other_data`) VALUES (:password, :phone, :phone_token , :phone_token_data, :doc_photo, :surname, :name, :patronymic, :date_of_birth, :gender, :other_data)");
 
-            $result_query = $stmt->execute(array("id" => NULL,
-                                                 ":password" => self::$params_url['password'],
-                                                 ":phone" => self::$params_url['phone'],
-                                                 ":phone_token" => self::$params_url['phone_token'],
-                                                 ":phone_token_data" => self::$params_url['phone_token_data'],
-                                                 ":doc_photo" => self::$params_url['doc_photo'],
-                                                 ":surname" => self::$params_url['surname'],
-                                                 ":name" => self::$params_url['name'],
-                                                 ":patronymic" => self::$params_url['patronymic'],
-                                                 ":date_of_birth" => self::$params_url['date_of_birth'],
-                                                 ":gender" => self::$params_url['gender'],
-                                                 ":other_data" => self::$params_url['other_data']));        
+             $result_query = $stmt->execute(array(":password" => self::$params_url['password'],
+                                                  ":phone" => self::$params_url['phone'],
+                                                  ":phone_token" => self::$params_url['phone_token'],
+                                                  ":phone_token_data" => self::$params_url['phone_token_data'],
+                                                  ":doc_photo" => self::$params_url['doc_photo'],
+                                                  ":surname" => self::$params_url['surname'],
+                                                  ":name" => self::$params_url['name'],
+                                                  ":patronymic" => self::$params_url['patronymic'],
+                                                  ":date_of_birth" => self::$params_url['date_of_birth'],
+                                                  ":gender" => self::$params_url['gender'],
+                                                  ":other_data" => self::$params_url['other_data']));
 
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
-            $this->viewJSON($rows);
-
-        }
-
+             $this->viewJSON($rows);
+         }
 }
