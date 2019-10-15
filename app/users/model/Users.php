@@ -103,8 +103,8 @@ class Users extends Model{
             
              $stmt = self::$db->prepare("INSERT INTO `users_person_data`(`password`, `phone`, `phone_token`, `phone_token_data`, `doc_photo`, `surname`, `name`, `patronymic`, `date_of_birth`, `gender`, `other_data`) VALUES (:password, :phone, :phone_token , :phone_token_data, :doc_photo, :surname, :name, :patronymic, :date_of_birth, :gender, :other_data)");
 
-             $stmt->bindValue(":password" => self::$params_url['password']);
-             $stmt->bindValue(":phone" => self::$params_url['phone']);
+             $stmt->bindValue(":password", self::$params_url['password']);
+             $stmt->bindValue(":phone", self::$params_url['phone']);
              $result_query = $stmt->execute();
                                                   
          }
