@@ -89,7 +89,7 @@ class Users extends Model{
         }
         
         public function view_users_cards_sql() {
-            $stmt = self::$db->prepare("SELECT * FROM  `view_users` WHERE 1");
+            $stmt = self::$db->prepare("SELECT * FROM  `users_cards` WHERE 1");
 
             $result_query = $stmt->execute(array());
 
