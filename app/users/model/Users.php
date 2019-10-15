@@ -100,7 +100,14 @@ class Users extends Model{
         }
     
         public function ins_users_person_data_sql() {
-            $stmt = self::$db->prepare("NSERT INTO `users_person_data`(`password`, `phone`, `phone_token`, `phone_token_data`, `doc_photo`, `surname`, `name`, `patronymic`, `date_of_birth`, `gender`, `other_data`) VALUES (":password",":phone",":phone_token",":phone_token_data",":doc_photo",":surname",":name",":patronymic",":date_of_birth",":gender",":other_data")");
+            $stmt = self::$db->prepare("NSERT INTO `users_person_data`( `password`,
+                                                                        `phone`, 
+                                                                        `phone_token`,
+                                                                        `phone_token_data`,
+                                                                        `doc_photo`, `surname`,
+                                                                        `name`, `patronymic`,
+                                                                        `date_of_birth`, `gender`,
+                                                                        `other_data`) VALUES (":password",":phone",":phone_token",":phone_token_data",":doc_photo",":surname",":name",":patronymic",":date_of_birth",":gender",":other_data")");
 
             $result_query = $stmt->execute(array(":password" => self::$params_url['password'],
                                                  ":phone" => self::$params_url['phone'],
