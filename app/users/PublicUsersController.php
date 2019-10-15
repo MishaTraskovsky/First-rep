@@ -71,5 +71,6 @@ class PublicUsersController{
     $class -> ins_users_person_data_sql();
     $class -> view_users_cards_sql
     }
+    
 }
     
