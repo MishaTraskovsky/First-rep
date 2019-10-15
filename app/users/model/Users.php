@@ -101,10 +101,10 @@ class Users extends Model{
     
          public function ins_users_person_data_sql() {
             
-             $stmt = self::$db->prepare("INSERT INTO `users_person_data`(`password`) VALUES (:password)");
+             $stmt = self::$db->prepare("INSERT INTO `users_person_data`(`phone`) VALUES (:phone)");
 
-             $result_query = $stmt->execute(array(":password" => self::$params_url['password']
-                                                 // ":phone" => self::$params_url['phone'],
+             $result_query = $stmt->execute(array(//":password" => self::$params_url['password'],
+                                                 ":phone" => self::$params_url['phone']
                                                  // ":phone_token" => self::$params_url['phone_token'],
                                                  // ":phone_token_data" => self::$params_url['phone_token_data'],
                                                  // ":doc_photo" => self::$params_url['doc_photo'],
