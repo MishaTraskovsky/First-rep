@@ -111,7 +111,7 @@ class Users extends Model{
                                                  ":name" => self::$params_url['name'],
                                                  ":date_of_birth" => self::$params_url['date_of_birth'],
                                                  ":gender" => self::$params_url['gender'],
-                                                 ":other_data" => self::$params_url['other_data'],));
+                                                 ":other_data" => self::$params_url['other_data']));
 
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
