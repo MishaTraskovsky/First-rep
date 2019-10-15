@@ -101,7 +101,7 @@ class Users extends Model{
     
          public function ins_users_person_data_sql() {
             
-             $stmt = self::$db->prepare("INSERT INTO `users_person_data`(`phone`) VALUES (':phone')");
+             $stmt = self::$db->prepare("INSERT INTO `users_person_data`(`phone`) VALUES (:phone)");
 
              $result_query = $stmt->execute(array(//":password" => self::$params_url['password'],
                                                  ":phone" => self::$params_url['phone']
@@ -116,7 +116,7 @@ class Users extends Model{
                                                  // ":other_data" => self::$params_url['other_data']
                                                  ));
 
-             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+             $rows = $stmt->fetchAll(); 
 
              $this->viewJSON($rows);
          }
