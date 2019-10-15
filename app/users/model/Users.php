@@ -101,7 +101,7 @@ class Users extends Model{
     
          public function ins_users_person_data_sql() {
             
-             $stmt = self::$db->prepare("INSERT INTO `users_person_data`(`password`, `phone`, `phone_token`, `phone_token_data`, `doc_photo`, `surname`, `name`, `patronymic`, `date_of_birth`, `gender`, `other_data`) VALUES (:field_password, :phone)");
+             $stmt = self::$db->prepare("INSERT INTO `users_person_data`(`password`, `phone`, `phone_token`, `phone_token_data`, `doc_photo`, `surname`, `name`, `patronymic`, `date_of_birth`, `gender`, `other_data`) VALUES (:field_password, :phone, :phone_token, :phone_token_data, :doc_photo, :surname, :name, :patronymic, :date_of_birth, :gender, :other_data)");
 
              $stmt->bindValue(":field_password", self::$params_url["password"], PDO::PARAM_STR);
              $stmt->bindValue(":phone", self::$params_url['phone'], PDO::PARAM_STR);
