@@ -115,6 +115,5 @@ class Users extends Model{
                                                   ":gender" => self::$params_url['gender'],
                                                   ":other_data" => self::$params_url['other_data']));
 
-              //https://m.qzo.su/api/users/ins_users_person_data_sql?&password=54321&phone=1&phone_token=54321&phone_token_data=543&doc_photo=photo&surname=surname&name=name&patronymic=patronymic&date_of_birth=000000&gender=male&other_data=texttext
          }
 }
