@@ -132,7 +132,7 @@ class Users extends Model{
     
         public function DelUsersPersonDataSql(){
             
-            $stmt = sel::$db->prepare("DELETE FROM `users_cards` WHERE id=:id");
+            $stmt = sel::$db->prepare("DELETE FROM `users_person_data` WHERE id=:id");
             $stmt = bindValue(":id", self::$params_url["id"]);
             $result_query = $stmt->execute();
         }
