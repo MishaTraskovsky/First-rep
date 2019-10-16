@@ -32,6 +32,7 @@ class Users extends Model{
             $result_query = $stmt->execute(array());
 
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $this->viewJSON($rows);
             
         echo "Пользователь " . $rows ." успешно создан";
         Model::table("users_cards")->add(array("level" => $_GET["level"],
