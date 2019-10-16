@@ -24,8 +24,9 @@ class Users extends Model{
             
             echo "Укажите все данные.";
         }
-        $c = 4
+        
         else{
+        $c = 4;
         echo "Пользователь" . $c ."успешно создан";
         Model::table("users_cards")->add(array("level" => $_GET["level"],
                                                "user_type" => $_GET["user_type"],
