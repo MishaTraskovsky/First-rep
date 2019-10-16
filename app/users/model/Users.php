@@ -26,14 +26,14 @@ class Users extends Model{
         }
         
         else{        
-        Model::table("users_cards")->add(array("level" => $_GET["level"],
+        $a = Model::table("users_cards")->add(array("level" => $_GET["level"],
                                                "user_type" => $_GET["user_type"],
                                                "image" => $_GET["image"],
                                                "nickname" => $_GET["nickname"],
                                                "rating" => $_GET["rating"],
                                                "description" => $_GET["description"]))->send();
             
-            echo "Пользователь " . mysql_insert_id() ." успешно создан";
+            echo "Пользователь " . $a ." успешно создан";
         }
     }
     
@@ -143,7 +143,9 @@ class Users extends Model{
             $stmt->bindValue(":rating", self::$params_url["rating"], PDO::PARAM_STR);
             $stmt->bindValue(":description", self::$params_url["description"], PDO::PARAM_STR);
             $result_query = $stmt->execute();
-        }
+            
+            
+            }
     
         public function DelUsersPersonDataSql() {
             
