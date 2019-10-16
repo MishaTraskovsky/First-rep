@@ -25,13 +25,14 @@ class Users extends Model{
             echo "Укажите все данные.";
             exit;
         }
-        
+        else{
         Model::table("users_cards")->add(array("level" => $_GET["level"],
                                                "user_type" => $_GET["user_type"],
                                                "image" => $_GET["image"],
                                                "nickname" => $_GET["nickname"],
                                                "rating" => $_GET["rating"],
                                                "description" => $_GET["description"]))->send();
+        }
     }
     
     public function AddUsersPersonData(){
