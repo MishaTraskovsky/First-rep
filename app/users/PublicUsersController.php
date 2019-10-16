@@ -8,67 +8,67 @@
 
 class PublicUsersController{
 
-    public function add_user_cards(){ 
+    public function AddUserCards(){ 
         $class = new Users();
-        $class -> add_user_cards(); 
-        $class -> view_users_cards();
+        $class -> AddUserCards(); 
+        $class -> ViewUsersCards();
     
     //level=3&user_type=user&image=0&nickname=nik&rating=2&description=text1
     }
     
-    public function add_users_person_data(){ 
+    public function AddUsersPersonData(){ 
         $class = new Users();
-        $class -> add_users_person_data(); 
-        $class -> view_users_person_data();
+        $class -> AddUsersPersonData(); 
+        $class -> ViewUsersPersonData();
     //password=12345&phone=893365563893&phone_token=54321&phone_token_data=543&doc_photo=photo&surname=surname&name=name&patronymic=patronymic&date_of_birth=000000&gender=male&other_data=texttext
     
     }
     
-    public function update_users_person_data(){ 
+    public function UpdateUsersPersonData(){ 
         $class = new Users();
-        $class -> update_users_person_data(); 
-        $class -> view_users_person_data();
+        $class -> UpdateUsersPersonData(); 
+        $class -> ViewUsersPersonData();
         //password=54321&phone=13&phone_token=54321&phone_token_data=543&doc_photo=photo&surname=surname&name=name&patronymic=patronymic&date_of_birth=000000&gender=male&other_data=texttext&id=2
     }
     
-    public function update_user_cards(){ 
+    public function UpdateUserCards(){ 
         $class = new Users();
-        $class -> update_user_cards(); 
-        $class -> view_users_cards();
+        $class -> UpdateUserCards(); 
+        $class -> ViewUsersCards();
         
     //level=3&user_type=user&image=0&nickname=nik&rating=2&description=text1$id=1        
     }
     
-    public function del_user_cards(){ 
+    public function DelUserCards(){ 
         $class = new Users();
-        $class -> del_user_cards(); 
-        $class -> view_users_cards();
+        $class -> DelUserCards(); 
+        $class -> ViewUsersCards();
     }
     
-    public function del_users_person_data(){ 
+    public function DelUsersPersonData(){ 
         $class = new Users();
-        $class -> del_users_person_data(); 
-        $class -> view_users_person_data();
+        $class -> DelUsersPersonData(); 
+        $class -> ViewUsersPersonData();
     }
     
-    public function view_bd(){ 
+    public function ViewBd(){ 
         $class = new Users();
-        $class -> view_users_cards();     
+        $class -> ViewUsersCards();     
     }
     
-    public function view_users_person_data_sql(){ 
+    public function ViewUsersPersonDataSql(){ 
         $class = new Users();
-        $class -> view_users_person_data_sql();     
+        $class -> ViewUsersPersonDataSql();     
     }
     
-    public function view_users_cards_sql(){ 
+    public function ViewUsersCardsSql(){ 
         $class = new Users();
-        $class -> view_users_cards_sql();     
+        $class -> ViewUsersCardsSql();     
     }
     
-    public function ins_users_person_data_sql(){ 
+    public function InsUsersPersonDataSql(){ 
         $class = new Users();
-        $class -> ins_users_person_data_sql();
+        $class -> InsUsersPersonDataSql();
     }
     
 }

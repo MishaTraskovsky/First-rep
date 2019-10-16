@@ -119,6 +119,14 @@ class Users extends Model{
          }
     
         public function InsUsersCardsSql(){
-            $stmt = self::$db->prepare("INSERT INTO `users_cards`(`)")
+            $stmt = self::$db->prepare("INSERT INTO `users_cards`(`level`, `user_type`, `image`, `nickname`, `rating`, `description`) VALUES (:level, :user_type, :image, :nickname, :rating, :description)");
+            
+            $stmt->bindValue(":level", self::$params_url["level"], PDO::PARAM_STR);
+            $stmt->bindValue(":user_type", self::$params_url["user_type"], PDO::PARAM_STR);
+            $stmt->bindValue(":image", self::$params_url["image"], PDO::PARAM_STR);
+            $stmt->bindValue(":nickname", self::$params_url["nickname"], PDO::PARAM_STR);
+            $stmt->bindValue(":rating", self::$params_url["rating"], PDO::PARAM_STR);
+            $stmt->bindValue(":description", self::$params_url["description"], PDO::PARAM_STR);
+            result_query = $stmt->execute();
         }
 }
