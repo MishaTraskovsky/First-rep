@@ -144,8 +144,8 @@ class Users extends Model{
             $stmt->bindValue(":description", self::$params_url["description"], PDO::PARAM_STR);
             $result_query = $stmt->execute();
             
-            $a = $db ->lastInsertId()
-            echo "Пользователь " . $a . " успешно создан"
+            $a = $db ->lastInsertId();
+            echo "Пользователь " . $a . " успешно создан";
             }
     
         public function DelUsersPersonDataSql() {
