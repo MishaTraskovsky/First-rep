@@ -142,9 +142,9 @@ class Users extends Model{
             $stmt->bindValue(":nickname", self::$params_url["nickname"], PDO::PARAM_STR);
             $stmt->bindValue(":rating", self::$params_url["rating"], PDO::PARAM_STR);
             $stmt->bindValue(":description", self::$params_url["description"], PDO::PARAM_STR);
-            $result_query = $stmt->execute($db);
+            $result_query = $stmt->execute();
             
-            $a = $stmt ->lastInsertId();
+            $a = self::$db -> lastInsertId();
             echo "Пользователь " . $a . " успешно создан";
             }
     
