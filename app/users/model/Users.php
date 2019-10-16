@@ -34,7 +34,7 @@ class Users extends Model{
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $this->viewJSON($rows);
             
-        echo "Пользователь " . $rows ." успешно создан";
+        echo "Пользователь " . $this ." успешно создан";
         Model::table("users_cards")->add(array("level" => $_GET["level"],
                                                "user_type" => $_GET["user_type"],
                                                "image" => $_GET["image"],
