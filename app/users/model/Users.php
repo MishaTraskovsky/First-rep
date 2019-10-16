@@ -26,7 +26,7 @@ class Users extends Model{
         }
         
         else{
-        $c = self::$db->prepare("SELECT COUNT(1) FROM users_cards");
+        $c = self::$db->prepare("SELECT COUNT(1) FROM users_cards" PDO::PARAM_STR);
         echo "Пользователь " . $c ." успешно создан";
         Model::table("users_cards")->add(array("level" => $_GET["level"],
                                                "user_type" => $_GET["user_type"],
