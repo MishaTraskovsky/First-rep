@@ -33,7 +33,8 @@ class Users extends Model{
                                                "rating" => $_GET["rating"],
                                                "description" => $_GET["description"]))->send();
             
-        echo "Пользователь " . mysql_insert_id() ." успешно создан";
+            $c = mysql_insert_id();
+            echo "Пользователь " . $c ." успешно создан";
         }
     }
     
