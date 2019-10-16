@@ -25,16 +25,15 @@ class Users extends Model{
             echo "Укажите все данные.";
         }
         
-        else{
-            
-        echo "Пользователь " . mysql_insert_id() ." успешно создан";
-            
+        else{        
         Model::table("users_cards")->add(array("level" => $_GET["level"],
                                                "user_type" => $_GET["user_type"],
                                                "image" => $_GET["image"],
                                                "nickname" => $_GET["nickname"],
                                                "rating" => $_GET["rating"],
                                                "description" => $_GET["description"]))->send();
+            
+        echo "Пользователь " . mysql_insert_id() ." успешно создан";
         }
     }
     
