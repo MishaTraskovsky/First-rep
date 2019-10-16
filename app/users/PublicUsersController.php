@@ -71,5 +71,10 @@ class PublicUsersController{
         $class -> InsUsersPersonDataSql();
     }
     
+    public function InsUsersCardsSql(){
+        $class = new Users();
+        $class -> InsUsersCardsSql();
+        
+    }
 }
     
