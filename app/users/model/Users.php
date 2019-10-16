@@ -23,6 +23,7 @@ class Users extends Model{
            and isset($_GET["description"])){
             
             echo "Укажите все данные.";
+            exit;
         }
         
         Model::table("users_cards")->add(array("level" => $_GET["level"],
