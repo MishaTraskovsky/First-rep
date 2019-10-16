@@ -27,7 +27,7 @@ class Users extends Model{
         
         else{
         
-            $stmt = self::$db->prepare("SELECT * FROM  `users_cards` WHERE 1");
+            $stmt = self::$db->prepare("SELECT COUNT(1) FROM users_cards");
 
             $result_query = $stmt->execute(array());
 
