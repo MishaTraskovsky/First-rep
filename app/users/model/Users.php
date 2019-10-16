@@ -26,8 +26,14 @@ class Users extends Model{
         }
         
         else{
-        $c = self::$db->prepare("SELECT COUNT(1) FROM users_cards" PDO::PARAM_STR);
-        echo "Пользователь " . $c ." успешно создан";
+        
+            $stmt = self::$db->prepare("SELECT * FROM  `users_cards` WHERE 1");
+
+            $result_query = $stmt->execute(array());
+
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+        echo "Пользователь " . $rows ." успешно создан";
         Model::table("users_cards")->add(array("level" => $_GET["level"],
                                                "user_type" => $_GET["user_type"],
                                                "image" => $_GET["image"],
