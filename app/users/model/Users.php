@@ -26,6 +26,7 @@ class Users extends Model{
         }
         
         else{
+        echo "Пользователь" . $c ."успешно создан";
         Model::table("users_cards")->add(array("level" => $_GET["level"],
                                                "user_type" => $_GET["user_type"],
                                                "image" => $_GET["image"],
