@@ -129,4 +129,9 @@ class Users extends Model{
             $stmt->bindValue(":description", self::$params_url["description"], PDO::PARAM_STR);
             $result_query = $stmt->execute();
         }
+    
+        public function DelUsersPersonDataSql(){
+            
+            $stmt = sel::$db->prepare("DELETE FROM `users_cards` WHERE id=:id")
+        }
 }
