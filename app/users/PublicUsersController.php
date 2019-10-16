@@ -79,7 +79,7 @@ class PublicUsersController{
     
     public function DelUsersPersonDataSql(){
         $class = new Users();
-        $class = DelUsersPersonDataSql();
+        $class -> DelUsersPersonDataSql();
         
     }
 }
