@@ -76,5 +76,11 @@ class PublicUsersController{
         $class -> InsUsersCardsSql();
         
     }
+    
+    public function DelUsersPersonDataSql(){
+        $class = new Users();
+        $class = DelUsersPersonDataSql();
+        
+    }
 }
     
