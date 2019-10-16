@@ -136,4 +136,11 @@ class Users extends Model{
             $stmt -> bindValue(":id", self::$params_url["id"]);
             $result_query = $stmt->execute();
         }
+    
+         public function DelUsersCardsSql() {
+            
+            $stmt = self::$db->prepare("DELETE FROM `users_cards` WHERE id=:id");
+            $stmt -> bindValue(":id", self::$params_url["id"]);
+            $result_query = $stmt->execute();
+        }
 }
