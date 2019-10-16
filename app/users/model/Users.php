@@ -33,7 +33,7 @@ class Users extends Model{
 
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             
-        echo "Пользователь " . $rows[] ." успешно создан";
+        echo "Пользователь " . $rows[0] ." успешно создан";
             
         Model::table("users_cards")->add(array("level" => $_GET["level"],
                                                "user_type" => $_GET["user_type"],
