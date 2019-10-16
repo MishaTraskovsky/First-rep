@@ -130,9 +130,9 @@ class Users extends Model{
             $result_query = $stmt->execute();
         }
     
-        public function DelUsersPersonDataSql(){
+        public function DelUsersPersonDataSql() {
             
-            $stmt = sel::$db->prepare("DELETE FROM `users_person_data` WHERE id=:id");
+            $stmt = self::$db->prepare("DELETE FROM `users_person_data` WHERE id=:id");
             $stmt = bindValue(":id", self::$params_url["id"]);
             $result_query = $stmt->execute();
         }
