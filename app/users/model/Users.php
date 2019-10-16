@@ -15,15 +15,14 @@ class Users extends Model{
     
     public function AddUserCards(){
         
-        while( empty($_GET["level"]) 
-           and empty($_GET["user_type"]) 
-           and empty($_GET["image"]) 
-           and empty($_GET["nickname"]) 
-           and empty($_GET["rating"]) 
-           and empty($_GET["description"])){
+        if ( isset($_GET["level"]) 
+           and isset($_GET["user_type"]) 
+           and isset($_GET["image"]) 
+           and isset($_GET["nickname"]) 
+           and isset($_GET["rating"]) 
+           and isset($_GET["description"])){
             
             echo "Укажите все данные.";
-            exit;
         }
         
         Model::table("users_cards")->add(array("level" => $_GET["level"],
