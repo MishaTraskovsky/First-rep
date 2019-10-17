@@ -38,7 +38,24 @@ class Users extends Model{
     }
     
     public function AddUsersPersonData(){
-        Model::table("users_person_data")->add(array("password" => $_GET["password"],
+        
+         if ( empty($_GET["password"]) 
+           or empty($_GET["phone"]) 
+           or empty($_GET["phone_token"]) 
+           or empty($_GET["phone_token_data"]) 
+           or empty($_GET["doc_photo"]) 
+           or empty($_GET["surname"]
+           or empty($_GET["name"]
+           or empty($_GET["patronymic"]
+           or empty($_GET["date_of_birth"]
+           or empty($_GET["gender"]
+           or empty($_GET["other_data"])){
+            
+            echo "Укажите все данные.";
+        }
+        
+        else {
+            Model::table("users_person_data")->add(array("password" => $_GET["password"],
                                                      "phone" => $_GET["phone"],
                                                      "phone_token" => $_GET["phone_token"],
                                                      "phone_token_data" => $_GET["phone_token_data"],
@@ -48,7 +65,8 @@ class Users extends Model{
                                                      "patronymic" => $_GET["patronymic"],
                                                      "date_of_birth" => $_GET["date_of_birth"],
                                                      "gender" => $_GET["gender"],
-                                                     "other_data" => $_GET["other_data"]))->send();      
+                                                     "other_data" => $_GET["other_data"]))->send();  
+        }
     }
     
         public function UpdateUsersPersonData(){
