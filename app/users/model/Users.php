@@ -210,6 +210,7 @@ class Users extends Model{
             
             if(empty(self::$params_url[id])){
                 echo "Укажите ID";
+                exit;
             }
             else{
                     $stmt = self::$db->prepare("DELETE FROM `users_person_data` WHERE id=:id");
