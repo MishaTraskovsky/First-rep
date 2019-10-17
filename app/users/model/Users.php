@@ -130,11 +130,12 @@ class Users extends Model{
     
         public function DelUserCards(){
             Model::table("users_cards")->delete(array("id" => $_GET["id"]))->send();
-            echo "Пользователь " . $_GET["id"] . "успешно удален!";
+            echo "Пользователь " . $_GET["id"] . " успешно удален!";
         }
     
         public function DelUsersPersonData(){
             Model::table("users_person_data")->delete(array("id" => $_GET["id"]))->send();
+            echo "Пользователь " . $_GET["id"] . " успешно удален!";
         }
         
         public function ViewUsersCardsForId() {
@@ -185,6 +186,8 @@ class Users extends Model{
              $stmt->bindValue(":gender", self::$params_url['gender'], PDO::PARAM_STR);
              $stmt->bindValue(":other_data", self::$params_url['other_data'], PDO::PARAM_STR);
              $result_query = $stmt->execute();
+             $a = self::$db -> lastInsertId();
+             echo "Пользователь " . $a . " успешно создан";
                                                   
          }
     
@@ -208,6 +211,7 @@ class Users extends Model{
             $stmt = self::$db->prepare("DELETE FROM `users_person_data` WHERE id=:id");
             $stmt -> bindValue(":id", self::$params_url["id"]);
             $result_query = $stmt->execute();
+            echo "Пользователь " . $params_url["id"] . " успешно удален."
         }
     
          public function DelUsersCardsSql() {

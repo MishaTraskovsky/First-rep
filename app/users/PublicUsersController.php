@@ -34,7 +34,6 @@ class PublicUsersController{
     public function DelUserCards(){ 
         $class = new Users();
         $class -> DelUserCards(); 
-        $class -> ViewUsersCards();
     }
     
     public function DelUsersPersonData(){ 
