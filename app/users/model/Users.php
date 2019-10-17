@@ -44,11 +44,11 @@ class Users extends Model{
            or empty($_GET["phone_token"]) 
            or empty($_GET["phone_token_data"]) 
            or empty($_GET["doc_photo"]) 
-           or empty($_GET["surname"]
-           or empty($_GET["name"]
-           or empty($_GET["patronymic"]
-           or empty($_GET["date_of_birth"]
-           or empty($_GET["gender"]
+           or empty($_GET["surname"])
+           or empty($_GET["name"])
+           or empty($_GET["patronymic"])
+           or empty($_GET["date_of_birth"])
+           or empty($_GET["gender"])
            or empty($_GET["other_data"])){
             
             echo "Укажите все данные.";
