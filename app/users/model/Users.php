@@ -55,7 +55,9 @@ class Users extends Model{
         }
         
         else {
-            $a = Model::table("users_person_data")->add(array("password" => $_GET["password"],
+            $a = Model::table("users_person_data")->add(array(
+                                                     "id" => self::$db -> lastInsertId("user_cards"),
+                                                     "password" => $_GET["password"],
                                                      "phone" => $_GET["phone"],
                                                      "phone_token" => $_GET["phone_token"],
                                                      "phone_token_data" => $_GET["phone_token_data"],
@@ -65,7 +67,8 @@ class Users extends Model{
                                                      "patronymic" => $_GET["patronymic"],
                                                      "date_of_birth" => $_GET["date_of_birth"],
                                                      "gender" => $_GET["gender"],
-                                                     "other_data" => $_GET["other_data"]))->send(); 
+                                                     "other_data" => $_GET["other_data"]))->send();
+                                                     
           
             echo "Пользователь " . $a ." успешно создан!"; 
         }
