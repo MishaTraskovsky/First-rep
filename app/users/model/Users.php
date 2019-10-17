@@ -33,7 +33,7 @@ class Users extends Model{
                                                "rating" => $_GET["rating"],
                                                "description" => $_GET["description"]))->send();
             
-            echo "Пользователь " . $a ." успешно создан";
+            echo "Пользователь " . $a ." успешно создан!";
         }
     }
     
@@ -67,35 +67,70 @@ class Users extends Model{
                                                      "gender" => $_GET["gender"],
                                                      "other_data" => $_GET["other_data"]))->send(); 
           
-            echo "Пользователь " . $a ." успешно создан"; 
+            echo "Пользователь " . $a ." успешно создан!"; 
         }
     }
     
         public function UpdateUsersPersonData(){
-            Model::table("users_person_data")->edit(array(  "password" => $_GET["password"],
-                                                            "phone" => $_GET["phone"],
-                                                            "phone_token" => $_GET["phone_token"],
-                                                            "phone_token_data" => $_GET["phone_token_data"],
-                                                            "doc_photo" => $_GET["doc_photo"],
-                                                            "surname" => $_GET["surname"],
-                                                            "name" => $_GET["name"],
-                                                            "patronymic" => $_GET["patronymic"],
-                                                            "date_of_birth" => $_GET["date_of_birth"],
-                                                            "gender" => $_GET["gender"],
-                                                            "other_data" => $_GET["other_data"]), array("id" => $_GET["id"]))->send();
+            
+             if ( empty($_GET["password"]) 
+           or empty($_GET["phone"]) 
+           or empty($_GET["phone_token"]) 
+           or empty($_GET["phone_token_data"]) 
+           or empty($_GET["doc_photo"]) 
+           or empty($_GET["surname"])
+           or empty($_GET["name"])
+           or empty($_GET["patronymic"])
+           or empty($_GET["date_of_birth"])
+           or empty($_GET["gender"])
+           or empty($_GET["other_data"])){
+            
+            echo "Укажите все данные.";
         }
+                else{ 
+                        $a = Model::table("users_person_data")->edit(array(  "password" => $_GET["password"],
+                                                                        "phone" => $_GET["phone"],
+                                                                     "phone_token" => $_GET["phone_token"],
+                                                                        "phone_token_data" => $_GET["phone_token_data"],
+                                                                     "doc_photo" => $_GET["doc_photo"],
+                                                                        "surname" => $_GET["surname"],
+                                                                        "name" => $_GET["name"],
+                                                                        "patronymic" => $_GET["patronymic"],
+                                                                        "date_of_birth" => $_GET["date_of_birth"],
+                                                                        "gender" => $_GET["gender"],
+                                                                        "other_data" => $_GET["other_data"]), array("id" => $_GET["id"]))->send();
+        
+                echo "Пользователь " . $a ."изменен!";
+                }
+           }
     
         public function UpdateUserCards(){
-            Model::table("users_cards")->edit(array("level" => $_GET["level"],
-                                                    "user_type" => $_GET["user_type"],
-                                                    "image" => $_GET["image"],
-                                                    "nickname" => $_GET["nickname"],
-                                                    "rating" => $_GET["rating"],
-                                                    "description" => $_GET["description"]), array("id" => $_GET["id"]))->send();
+           
+            if ( empty($_GET["level"]) 
+           or empty($_GET["user_type"]) 
+           or empty($_GET["image"]) 
+           or empty($_GET["nickname"]) 
+           or empty($_GET["rating"]) 
+           or empty($_GET["description"])){
+            
+            echo "Укажите все данные.";
+            }
+            
+            else{
+            
+                        $a = Model::table("users_cards")->edit(array("level" => $_GET["level"],
+                                                         "user_type" => $_GET["user_type"],
+                                                         "image" => $_GET["image"],
+                                                         "nickname" => $_GET["nickname"],
+                                                         "rating" => $_GET["rating"],
+                                                         "description" => $_GET["description"]), array("id" => $_GET["id"]))->send();
+            echo "Пользователь " . $a ."изменен!";
+            }
         }
     
         public function DelUserCards(){
             Model::table("users_cards")->delete(array("id" => $_GET["id"]))->send();;
+            echo "Пользователь " . $_GET["id"] . "успешно удален!"
         }
     
         public function DelUsersPersonData(){
