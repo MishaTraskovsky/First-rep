@@ -211,7 +211,7 @@ class Users extends Model{
             $stmt = self::$db->prepare("DELETE FROM `users_person_data` WHERE id=:id");
             $stmt -> bindValue(":id", self::$params_url["id"]);
             $result_query = $stmt->execute();
-            echo "Пользователь " . $params_url["id"] . " успешно удален."
+            echo "Пользователь " . $params_url["id"] . " успешно удален.";
         }
     
          public function DelUsersCardsSql() {
