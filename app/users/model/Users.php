@@ -129,12 +129,12 @@ class Users extends Model{
         }
     
         public function DelUserCards(){
-            Model::table("users_cards")->delete(array("id" => $_GET["id"]))->send();;
-            echo "Пользователь " . $_GET["id"] . "успешно удален!"
+            Model::table("users_cards")->delete(array("id" => $_GET["id"]))->send();
+            echo "Пользователь " . $_GET["id"] . "успешно удален!";
         }
     
         public function DelUsersPersonData(){
-            Model::table("users_person_data")->delete(array("id" => $_GET["id"]))->send();;
+            Model::table("users_person_data")->delete(array("id" => $_GET["id"]))->send();
         }
         
         public function ViewUsersCardsForId() {
