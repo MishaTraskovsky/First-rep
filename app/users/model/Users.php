@@ -131,15 +131,15 @@ class Users extends Model{
             }
         }
     
-        public function DelUC(){
-            Model::table("users_cards")->delete(array("id" => $_GET["id"]))->send();
-            echo "Пользователь " . $_GET["id"] . " успешно удален!";
-        }
+    //    public function DelUC(){
+    //        Model::table("users_cards")->delete(array("id" => $_GET["id"]))->send();
+    //        echo "Пользователь " . $_GET["id"] . " успешно удален!";
+    //    }
     
-        public function DelUPD(){
-            Model::table("users_person_data")->delete(array("id" => $_GET["id"]))->send();
-            echo "Пользователь " . $_GET["id"] . " успешно удален!";
-        }
+    //    public function DelUPD(){
+    //        Model::table("users_person_data")->delete(array("id" => $_GET["id"]))->send();
+    //        echo "Пользователь " . $_GET["id"] . " успешно удален!";
+    //    }
         
         public function ViewUCId() {
             $stmt = self::$db->prepare("SELECT * FROM  `users_cards` WHERE id= :id");

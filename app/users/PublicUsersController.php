@@ -31,15 +31,15 @@ class PublicUsersController{
     //level=3&user_type=user&image=0&nickname=nik&rating=2&description=text1$id=1        
     }
     
-    public function DelUC(){ 
-        $class = new Users();
-        $class -> DelUC(); 
-    }
+//    public function DelUC(){ 
+//       $class = new Users();
+//        $class -> DelUC(); 
+//    }
     
-    public function DelUPD(){ 
-        $class = new Users();
-        $class -> DelUPD(); 
-    }
+//    public function DelUPD(){ 
+//        $class = new Users();
+//        $class -> DelUPD(); 
+//    }
     
     public function ViewUC(){ 
         $class = new Users();
@@ -77,7 +77,12 @@ class PublicUsersController{
         
     }
     
-
+    public function DelUPD(){
+        $class = new Users();
+        $class -> DelUPD();
+        
+    }
+    
     public function DelUC(){
         $class = new Users();
         $class -> DelUC();
