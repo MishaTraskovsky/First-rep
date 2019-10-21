@@ -223,7 +223,7 @@ class Users extends Model{
         }
     
          public function DelUC() {
-             if(empty(self::$params_url[id])){
+             if(empty(self::$params_url["id"])){
                         echo "Укажите ID";
              }
              
