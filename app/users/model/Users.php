@@ -22,18 +22,18 @@ class Users extends Model{
            or empty($_GET["rating"]) 
            or empty($_GET["description"])){
             
-            echo "Укажите все данные.";
+                echo "Укажите все данные.";
         }
         
         else{        
-        $a = Model::table("users_cards")->add(array("level" => $_GET["level"],
+                $GetID = Model::table("users_cards")->add(array("level" => $_GET["level"],
                                                "user_type" => $_GET["user_type"],
                                                "image" => $_GET["image"],
                                                "nickname" => $_GET["nickname"],
                                                "rating" => $_GET["rating"],
                                                "description" => $_GET["description"]))->send();
             
-            echo "Пользователь " . $a ." успешно создан!";
+                echo "Пользователь " . $GetID ." успешно создан!";
         }
     }
     
@@ -51,11 +51,11 @@ class Users extends Model{
            or empty($_GET["gender"])
            or empty($_GET["other_data"])){
             
-            echo "Укажите все данные.";
-        }
+                echo "Укажите все данные.";
+        }   
         
         else {
-            $a = Model::table("users_person_data")->add(array(
+                $GetID = Model::table("users_person_data")->add(array(
                                                      "id" => self::$db -> lastInsertId("user_cards"),
                                                      "password" => $_GET["password"],
                                                      "phone" => $_GET["phone"],
@@ -70,7 +70,7 @@ class Users extends Model{
                                                      "other_data" => $_GET["other_data"]))->send();
                                                      
           
-            echo "Пользователь " . $a ." успешно создан!"; 
+                echo "Пользователь " . $GetID ." успешно создан!"; 
         }
     }
     
@@ -91,7 +91,7 @@ class Users extends Model{
             echo "Укажите все данные.";
         }
                 else{ 
-                        $a = Model::table("users_person_data")->edit(array(  "password" => $_GET["password"],
+                        $GetID = Model::table("users_person_data")->edit(array(  "password" => $_GET["password"],
                                                                         "phone" => $_GET["phone"],
                                                                      "phone_token" => $_GET["phone_token"],
                                                                         "phone_token_data" => $_GET["phone_token_data"],
@@ -103,7 +103,7 @@ class Users extends Model{
                                                                         "gender" => $_GET["gender"],
                                                                         "other_data" => $_GET["other_data"]), array("id" => $_GET["id"]))->send();
         
-                echo "Пользователь " . $a ."изменен!";
+                        echo "Пользователь " . $GetID ."изменен!";
                 }
            }
     
@@ -116,18 +116,18 @@ class Users extends Model{
            or empty($_GET["rating"]) 
            or empty($_GET["description"])){
             
-            echo "Укажите все данные.";
+                        echo "Укажите все данные.";
             }
             
             else{
             
-                        $a = Model::table("users_cards")->edit(array("level" => $_GET["level"],
+                        $GetID = Model::table("users_cards")->edit(array("level" => $_GET["level"],
                                                          "user_type" => $_GET["user_type"],
                                                          "image" => $_GET["image"],
                                                          "nickname" => $_GET["nickname"],
                                                          "rating" => $_GET["rating"],
                                                          "description" => $_GET["description"]), array("id" => $_GET["id"]))->send();
-            echo "Пользователь " . $a ."изменен!";
+                        echo "Пользователь " . $GetID ."изменен!";
             }
         }
     
@@ -189,8 +189,8 @@ class Users extends Model{
              $stmt->bindValue(":gender", self::$params_url['gender'], PDO::PARAM_STR);
              $stmt->bindValue(":other_data", self::$params_url['other_data'], PDO::PARAM_STR);
              $result_query = $stmt->execute();
-             $a = self::$db -> lastInsertId();
-             echo "Пользователь " . $a . " успешно создан";
+             $GetID = self::$db -> lastInsertId();
+             echo "Пользователь " . $GetID. " успешно создан";
                                                   
          }
     
@@ -205,14 +205,14 @@ class Users extends Model{
             $stmt->bindValue(":description", self::$params_url["description"], PDO::PARAM_STR);
             $result_query = $stmt->execute();
             
-            $a = self::$db -> lastInsertId();
-            echo "Пользователь " . $a . " успешно создан";
+            $GetID = self::$db -> lastInsertId();
+            echo "Пользователь " . $GetID . " успешно создан";
             }
     
         public function DelUsersPersonDataSql() {
             
             if(empty(self::$params_url[id])){
-                echo "Укажите ID";
+                    echo "Укажите ID";
             }
             else{
                     $stmt = self::$db->prepare("DELETE FROM `users_person_data` WHERE id=:id");
@@ -224,12 +224,12 @@ class Users extends Model{
     
          public function DelUsersCardsSql() {
              if(empty(self::$params_url[id])){
-                echo "Укажите ID";
+                        echo "Укажите ID";
              }
              
              else{
                         $stmt = self::$db->prepare("DELETE FROM `users_cards` WHERE id=:id");
-                     $stmt -> bindValue(":id", self::$params_url["id"]);
+                        $stmt -> bindValue(":id", self::$params_url["id"]);
                         $result_query = $stmt->execute();
                         echo "Пользователь " . self::$params_url["id"] . " успешно удален.";
              }
