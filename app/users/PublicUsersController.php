@@ -58,7 +58,7 @@ class PublicUsersController{
     
     public function ViewUCId(){ 
         $class = new Users();
-        $class -> ViewUCId();     
+        $class -> ViewUCSel();     
     } 
     
     public function ViewUPDSel(){ 
@@ -77,12 +77,7 @@ class PublicUsersController{
         
     }
     
-    public function DelUPD(){
-        $class = new Users();
-        $class -> DelUPD();
-        
-    }
-    
+
     public function DelUC(){
         $class = new Users();
         $class -> DelUC();
