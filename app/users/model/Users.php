@@ -1,19 +1,19 @@
 <?php
  
 class Users extends Model{
-    public function ViewUsersCards() {
+    public function ViewUC() {
         $bd = Model::table("users_cards")->get()->send();
         $this->viewJSON($bd);
         }
     
     
-    public function ViewUsersPersonData() {
+    public function ViewUPD() {
         $bd = Model::table("users_person_data")->get()->send();
         $this->viewJSON($bd);
         }
     
     
-    public function AddUserCards(){
+    public function AddUC(){
         
         if ( empty($_GET["level"]) 
            or empty($_GET["user_type"]) 
@@ -37,7 +37,7 @@ class Users extends Model{
         }
     }
     
-    public function AddUsersPersonData(){
+    public function AddUPD(){
         
          if ( empty($_GET["password"]) 
            or empty($_GET["phone"]) 
@@ -74,7 +74,7 @@ class Users extends Model{
         }
     }
     
-        public function UpdateUsersPersonData(){
+        public function UpUPD(){
             
              if ( empty($_GET["password"]) 
            or empty($_GET["phone"]) 
@@ -104,10 +104,10 @@ class Users extends Model{
                                                                         "other_data" => $_GET["other_data"]), array("id" => $_GET["id"]))->send();
         
                         echo "Пользователь " . $GetID ."изменен!";
-                }
+                    }
            }
     
-        public function UpdateUserCards(){
+        public function UpUC(){
            
             if ( empty($_GET["level"]) 
            or empty($_GET["user_type"]) 
@@ -131,17 +131,17 @@ class Users extends Model{
             }
         }
     
-        public function DelUserCards(){
+        public function DelUC(){
             Model::table("users_cards")->delete(array("id" => $_GET["id"]))->send();
             echo "Пользователь " . $_GET["id"] . " успешно удален!";
         }
     
-        public function DelUsersPersonData(){
+        public function DelUPD(){
             Model::table("users_person_data")->delete(array("id" => $_GET["id"]))->send();
             echo "Пользователь " . $_GET["id"] . " успешно удален!";
         }
         
-        public function ViewUsersCardsForId() {
+        public function ViewUCId() {
             $stmt = self::$db->prepare("SELECT * FROM  `users_cards` WHERE id= :id");
 
             $result_query = $stmt->execute(array(":id" => self::$params_url['id']));
@@ -151,7 +151,7 @@ class Users extends Model{
             $this->viewJSON($rows);
         }
         
-        public function ViewUsersPersonDataSql() {
+        public function ViewUPDSel() {
             $stmt = self::$db->prepare("SELECT * FROM  `users_person_data` WHERE 1");
 
             $result_query = $stmt->execute(array());
@@ -162,7 +162,7 @@ class Users extends Model{
 
         }
         
-        public function ViewUsersCardsSql() {
+        public function ViewUCSel() {
             $stmt = self::$db->prepare("SELECT * FROM  `users_cards` WHERE 1");
 
             $result_query = $stmt->execute(array());
@@ -173,7 +173,7 @@ class Users extends Model{
 
         }
     
-         public function InsUsersPersonDataSql() {
+         public function InsUPD() {
             
              $stmt = self::$db->prepare("INSERT INTO `users_person_data`(`password`, `phone`, `phone_token`, `phone_token_data`, `doc_photo`, `surname`, `name`, `patronymic`, `date_of_birth`, `gender`, `other_data`) VALUES (:field_password, :phone, :phone_token, :phone_token_data, :doc_photo, :surname, :name, :patronymic, :date_of_birth, :gender, :other_data    )");
 
@@ -194,7 +194,7 @@ class Users extends Model{
                                                   
          }
     
-        public function InsUsersCardsSql(){
+        public function InsUC(){
             $stmt = self::$db->prepare("INSERT INTO `users_cards`(`level`, `user_type`, `image`, `nickname`, `rating`, `description`) VALUES (:level, :user_type, :image, :nickname, :rating, :description)");
             
             $stmt->bindValue(":level", self::$params_url["level"], PDO::PARAM_STR);
@@ -209,7 +209,7 @@ class Users extends Model{
             echo "Пользователь " . $GetID . " успешно создан";
             }
     
-        public function DelUsersPersonDataSql() {
+        public function DelUPD() {
             
             if(empty(self::$params_url[id])){
                     echo "Укажите ID";
@@ -222,7 +222,7 @@ class Users extends Model{
             }
         }
     
-         public function DelUsersCardsSql() {
+         public function DelUC() {
              if(empty(self::$params_url[id])){
                         echo "Укажите ID";
              }

@@ -8,74 +8,84 @@
 
 class PublicUsersController{
 
-    public function AddUserCards(){ 
+    public function AddUC(){ 
         $class = new Users();
-        $class -> AddUserCards();     
+        $class -> AddUC();     
     //level=3&user_type=user&image=0&nickname=nik&rating=2&description=text1
     }
     
-    public function AddUsersPersonData(){ 
+    public function AddUPD(){ 
         $class = new Users();
-        $class -> AddUsersPersonData(); //password=12345&phone=893365563893&phone_token=54321&phone_token_data=543&doc_photo=photo&surname=surname&name=name&patronymic=patronymic&date_of_birth=000000&gender=male&other_data=texttext
+        $class -> AddUPD(); //password=12345&phone=893365563893&phone_token=54321&phone_token_data=543&doc_photo=photo&surname=surname&name=name&patronymic=patronymic&date_of_birth=000000&gender=male&other_data=texttext
     
     }
     
-    public function UpdateUsersPersonData(){ 
+    public function UpUPD(){ 
         $class = new Users();
-        $class -> UpdateUsersPersonData();         //password=54321&phone=13&phone_token=54321&phone_token_data=543&doc_photo=photo&surname=surname&name=name&patronymic=patronymic&date_of_birth=000000&gender=male&other_data=texttext&id=2
+        $class -> UpUPD();         //password=54321&phone=13&phone_token=54321&phone_token_data=543&doc_photo=photo&surname=surname&name=name&patronymic=patronymic&date_of_birth=000000&gender=male&other_data=texttext&id=2
     }
     
-    public function UpdateUserCards(){ 
+    public function UpUC(){ 
         $class = new Users();
-        $class -> UpdateUserCards();         
+        $class -> UpUC();         
     //level=3&user_type=user&image=0&nickname=nik&rating=2&description=text1$id=1        
     }
     
-    public function DelUserCards(){ 
+    public function DelUC(){ 
         $class = new Users();
-        $class -> DelUserCards(); 
+        $class -> DelUC(); 
     }
     
-    public function DelUsersPersonData(){ 
+    public function DelUPD(){ 
         $class = new Users();
-        $class -> DelUsersPersonData(); 
+        $class -> DelUPD(); 
     }
     
-    public function ViewUsersCards(){ 
+    public function ViewUC(){ 
         $class = new Users();
-        $class -> ViewUsersCards();     
+        $class -> ViewUC();     
     }
     
-    public function ViewUsersPersonDataSql(){ 
+    public function ViewUPD(){ 
         $class = new Users();
-        $class -> ViewUsersPersonDataSql();     
+        $class -> ViewUPD();     
     }
     
-    public function ViewUsersCardsSql(){ 
+    public function ViewUCSel(){ 
         $class = new Users();
-        $class -> ViewUsersCardsSql();     
+        $class -> ViewUCSel();     
+    } 
+    
+    public function ViewUCId(){ 
+        $class = new Users();
+        $class -> ViewUCId();     
+    } 
+    
+    public function ViewUPDSel(){ 
+        $class = new Users();
+        $class -> ViewUPDSel();     
     }
     
-    public function InsUsersPersonDataSql(){ 
+    public function InsUPD(){ 
         $class = new Users();
-        $class -> InsUsersPersonDataSql();
+        $class -> InsUPD();
     }
     
-    public function InsUsersCardsSql(){
+    public function InsUC(){
         $class = new Users();
-        $class -> InsUsersCardsSql();
+        $class -> InsUC();
         
     }
     
-    public function DelUsersPersonDataSql(){
+    public function DelUPD(){
         $class = new Users();
-        $class -> DelUsersPersonDataSql();
+        $class -> DelUPD();
         
     }
     
-    public function DelUsersCardsSql(){
+    public function DelUC(){
         $class = new Users();
-        $class -> DelUsersCardsSql();
+        $class -> DelUC();
         
     }
 }
