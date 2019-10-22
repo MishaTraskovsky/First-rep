@@ -8,67 +8,67 @@
 
 class PublicUsersController{
 
-    public function AddUC(){ 
+    public function addUC(){ 
         $class = new Users();
-        $class -> AddUC();     
+        $class -> addUC();     
     //level=3&user_type=user&image=1.jpg&nickname=nik&rating=2&description=text1
     }
     
-    public function AddUPD(){ 
+    public function addUPD(){ 
         $class = new Users();
-        $class -> AddUPD(); //password=12345&phone=893365563893&phone_token=54321&phone_token_data=543&doc_photo=photo&surname=surname&name=name&patronymic=patronymic&date_of_birth=000000&gender=male&other_data=texttext
+        $class -> addUPD(); //password=12345&phone=893365563893&phone_token=54321&phone_token_data=543&doc_photo=photo&surname=surname&name=name&patronymic=patronymic&date_of_birth=000000&gender=male&other_data=texttext
     
     }
     
-    public function UpUPD(){ 
+    public function apUPD(){ 
         $class = new Users();
-        $class -> UpUPD();         //password=54321&phone=13&phone_token=54321&phone_token_data=543&doc_photo=photo&surname=surname&name=name&patronymic=patronymic&date_of_birth=000000&gender=male&other_data=texttext&id=2
+        $class -> upUPD();         //password=54321&phone=13&phone_token=54321&phone_token_data=543&doc_photo=photo&surname=surname&name=name&patronymic=patronymic&date_of_birth=000000&gender=male&other_data=texttext&id=2
     }
     
-    public function UpUC(){ 
+    public function upUC(){ 
         $class = new Users();
-        $class -> UpUC();         
+        $class -> upUC();         
     //level=3&user_type=user&image=0&nickname=nik&rating=2&description=text1$id=1        
     }
     
     
-    public function ViewUC(){ 
+    public function viewUC(){ 
         $class = new Users();
-        $class -> ViewUC();     
+        $class -> viewUC();     
     }
     
-    public function ViewUPD(){ 
+    public function viewUPD(){ 
         $class = new Users();
-        $class -> ViewUPD();     
+        $class -> viewUPD();     
     }
     
     
-    public function ViewUCId(){ 
+    public function viewUCId(){ 
         $class = new Users();
-        $class -> ViewUCSel();     
+        $class -> viewUCSel();     
     } 
     
     
-    public function InsUPD(){ 
+    public function insUPD(){ 
         $class = new Users();
-        $class -> InsUPD();
+        $class -> insUPD();
     }
     
-    public function InsUC(){
+    public function insUC(){
         $class = new Users();
-        $class -> InsUC();
+        $class -> insUC();
         
     }
     
-    public function DelUPD(){
+    public function delUPD(){
         $class = new Users();
-        $class -> DelUPD();
+        $class -> delUPD();
         
     }
     
-    public function DelUC(){
+    public function delUC(){
         $class = new Users();
-        $class -> DelUC();
+        $class -> delUC();
         
     }
 }

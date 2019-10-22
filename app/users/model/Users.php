@@ -1,19 +1,19 @@
 <?php
  
 class Users extends Model{
-    public function ViewUC() {
+    public function viewUC() {
         $bd = Model::table("users_cards")->get()->send();
         $this->viewJSON($bd);
-        }
+    }
     
     
-    public function ViewUPD() {
+    public function viewUPD() {
         $bd = Model::table("users_person_data")->get()->send();
         $this->viewJSON($bd);
-        }
+    }
     
     
-    public function AddUC(){
+    public function addUC(){
         
         if ( empty($_GET["level"]) 
            or empty($_GET["user_type"]) 
@@ -37,7 +37,7 @@ class Users extends Model{
         }
     }
     
-    public function AddUPD(){        
+    public function addUPD(){        
         
          if ( empty($_GET["password"]) 
            or empty($_GET["phone"]) 
@@ -74,7 +74,7 @@ class Users extends Model{
         }
     }
     
-    public function UpUPD(){
+    public function upUPD(){
             
              if ( empty($_GET["password"]) 
            or empty($_GET["phone"]) 
@@ -92,23 +92,23 @@ class Users extends Model{
         }
                 else{ 
                         $GetID = Model::table("users_person_data")->edit(array("password" => $_GET["password"],
-                                                                        "phone" => $_GET["phone"],
-                                                                        "phone_token" => $_GET["phone_token"],
-                                                                        "phone_token_data" => $_GET["phone_token_data"],
-                                                                        "doc_photo" => $_GET["doc_photo"],
-                                                                        "surname" => $_GET["surname"],
-                                                                        "name" => $_GET["name"],
-                                                                        "patronymic" => $_GET["patronymic"],
-                                                                        "date_of_birth" => $_GET["date_of_birth"],
-                                                                        "gender" => $_GET["gender"],
-                                                                        "other_data" => $_GET["other_data"]), array("id" => $_GET["id"]))->send();
+                                                                               "phone" => $_GET["phone"],
+                                                                               "phone_token" => $_GET["phone_token"],
+                                                                               "phone_token_data" => $_GET["phone_token_data"],
+                                                                               "doc_photo" => $_GET["doc_photo"],
+                                                                               "surname" => $_GET["surname"],
+                                                                               "name" => $_GET["name"],
+                                                                               "patronymic" => $_GET["patronymic"],
+                                                                               "date_of_birth" => $_GET["date_of_birth"],
+                                                                               "gender" => $_GET["gender"],
+                                                                               "other_data" => $_GET["other_data"]), array("id" => $_GET["id"]))->send();
         
                         echo "Пользователь " . $GetID ."изменен!";
                     }
-           }
+    }
     
-    public function UpUC(){
-           
+    public function upUC(){
+        
             if ( empty($_GET["level"]) 
            or empty($_GET["user_type"]) 
            or empty($_GET["image"]) 
@@ -129,19 +129,19 @@ class Users extends Model{
                                                          "description" => $_GET["description"]), array("id" => $_GET["id"]))->send();
                         echo "Пользователь " . $GetID ."изменен!";
             }
-        }
+    }
     
-    public function DelUC(){
+    public function delUC(){
         Model::table("users_cards")->delete(array("id" => $_GET["id"]))->send();
         echo "Пользователь " . $_GET["id"] . " успешно удален!";
     }
     
-    public function DelUPD(){
+    public function delUPD(){
         Model::table("users_person_data")->delete(array("id" => $_GET["id"]))->send();
         echo "Пользователь " . $_GET["id"] . " успешно удален!";
     }
         
-    public function ViewUCId() {
+    public function viewUCId() {
             $stmt = self::$db->prepare("SELECT * FROM  `users_cards` WHERE id= :id");
 
             $result_query = $stmt->execute(array(":id" => self::$params_url['id']));
@@ -149,9 +149,9 @@ class Users extends Model{
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
             $this->viewJSON($rows);
-        }
+    }
     
-    public function InsUPD() {
+    public function insUPD() {
             
              $stmt = self::$db->prepare("INSERT INTO `users_person_data`(`password`, `phone`, `phone_token`, `phone_token_data`, `doc_photo`, `surname`, `name`, `patronymic`, `date_of_birth`, `gender`, `other_data`) VALUES (:field_password, :phone, :phone_token, :phone_token_data, :doc_photo, :surname, :name, :patronymic, :date_of_birth, :gender, :other_data    )");
 
@@ -169,10 +169,10 @@ class Users extends Model{
              $result_query = $stmt->execute();
              $GetID = self::$db -> lastInsertId();
              echo "Пользователь " . $GetID. " успешно создан";
-                                                  
-         }
-    
-    public function InsUC(){
+                                                
+    }
+  
+    public function insUC(){
             $stmt = self::$db->prepare("INSERT INTO `users_cards`(`level`, `user_type`, `image`, `nickname`, `rating`, `description`) VALUES (:level, :user_type, :image, :nickname, :rating, :description)");
             
             $stmt->bindValue(":level", self::$params_url["level"], PDO::PARAM_STR);
@@ -185,6 +185,29 @@ class Users extends Model{
             
             $GetID = self::$db -> lastInsertId();
             echo "Пользователь " . $GetID . " успешно создан";
-            }
+    }
     
+    
+    public function upUPDforUC(){
+        
+        if(SELECT EXISTS (SELECT id FROM `users_cards` WHERE id=$_GET["id_card"])){
+        
+        $GetID = Model::table("users_person_data")->edit(array("id_card" => $_GET["id_card"],
+                                                               "password" => $_GET["password"],
+                                                               "phone" => $_GET["phone"],
+                                                               "phone_token" => $_GET["phone_token"],
+                                                               "phone_token_data" => $_GET["phone_token_data"],
+                                                               "doc_photo" => $_GET["doc_photo"],
+                                                               "surname" => $_GET["surname"],
+                                                               "name" => $_GET["name"],
+                                                               "patronymic" => $_GET["patronymic"],
+                                                               "date_of_birth" => $_GET["date_of_birth"],
+                                                               "gender" => $_GET["gender"],
+                                                               "other_data" => $_GET["other_data"]), array("id" => $_GET["id"]))->send();
+        }
+        else{
+            echo "Такой карточки не существует!"
+        }
+        
+    }
 }
