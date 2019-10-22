@@ -192,7 +192,7 @@ class Users extends Model{
         
       //  if ($stmt){
             
-        $stmt = self::$db->prepare("SELECT EXISTS (SELECT id FROM `users_cards` WHERE id=:id_card)");
+        $stmt = self::$db->prepare("SELECT EXISTS (SELECT id FROM `users_cards` WHERE id=:id_card) AS value");
 
         $result_query = $stmt->execute(array(":id_card" => self::$params_url['id_card']));    
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
