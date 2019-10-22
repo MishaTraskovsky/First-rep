@@ -216,4 +216,9 @@ class Users extends Model{
         }
         
     }
+    
+    public function editUPDfree(){
+       if 
+        
+    }
 }
