@@ -194,7 +194,7 @@ class Users extends Model{
             
         $stmt = self::$db->prepare("SELECT EXISTS (SELECT id FROM `users_cards` WHERE id=:id_card)");
 
-        $result_query = $stmt->execute(array(":id" => self::$params_url['id_card']));    
+        $result_query = $stmt->execute(array(":id_card" => self::$params_url['id_card']));    
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo $stmt;
         //$GetID = Model::table("users_person_data")->edit(array("id_card" => $_GET["id_card"],
