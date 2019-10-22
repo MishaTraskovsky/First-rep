@@ -190,14 +190,15 @@ class Users extends Model{
     
     public function addUPDforUC(){
         
-        if ($rows[0]["value"]){
-            
         $stmt = self::$db->prepare("SELECT EXISTS (SELECT id FROM `users_cards` WHERE id=:id_card) AS value");
 
         $result_query = $stmt->execute(array(":id_card" => self::$params_url['id_card']));    
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            
-        $GetID = Model::table("users_person_data")->edit(array("id_card" => $_GET["id_card"],
+        $if = $rows[0]["value"];
+        
+        if ($if){
+        
+            $GetID = Model::table("users_person_data")->edit(array("id_card" => $_GET["id_card"],
                                                                "password" => $_GET["password"],
                                                                "phone" => $_GET["phone"],
                                                                "phone_token" => $_GET["phone_token"],
