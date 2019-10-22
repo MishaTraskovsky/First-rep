@@ -39,8 +39,7 @@ class Users extends Model{
     
     public function AddUPD(){        
         
-         if ( empty($_GET["id_card"])
-           or empty($_GET["password"]) 
+         if ( empty($_GET["password"]) 
            or empty($_GET["phone"]) 
            or empty($_GET["phone_token"]) 
            or empty($_GET["phone_token_data"]) 
