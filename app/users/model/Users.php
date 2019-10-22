@@ -190,24 +190,28 @@ class Users extends Model{
     
     public function upUPDforUC(){
         
-        if(SELECT EXISTS (SELECT id FROM `users_cards` WHERE id=$_GET["id_card"])){
-        
-        $GetID = Model::table("users_person_data")->edit(array("id_card" => $_GET["id_card"],
-                                                               "password" => $_GET["password"],
-                                                               "phone" => $_GET["phone"],
-                                                               "phone_token" => $_GET["phone_token"],
-                                                               "phone_token_data" => $_GET["phone_token_data"],
-                                                               "doc_photo" => $_GET["doc_photo"],
-                                                               "surname" => $_GET["surname"],
-                                                               "name" => $_GET["name"],
-                                                               "patronymic" => $_GET["patronymic"],
-                                                               "date_of_birth" => $_GET["date_of_birth"],
-                                                               "gender" => $_GET["gender"],
-                                                               "other_data" => $_GET["other_data"]), array("id" => $_GET["id"]))->send();
-        }
-        else{
-            echo "Такой карточки не существует!"
-        }
+      //  if ($stmt){
+            
+        $stmt = self::$db->prepare("SELECT EXISTS (SELECT id FROM `users_cards` WHERE id=:id_card)");
+
+        $result_query = $stmt->execute(array(":id" => self::$params_url['id_card']));    
+        echo $stmt;
+        //$GetID = Model::table("users_person_data")->edit(array("id_card" => $_GET["id_card"],
+        //                                                       "password" => $_GET["password"],
+        //                                                       "phone" => $_GET["phone"],
+        //                                                       "phone_token" => $_GET["phone_token"],
+        //                                                       "phone_token_data" => $_GET["phone_token_data"],
+        //                                                       "doc_photo" => $_GET["doc_photo"],
+        //                                                       "surname" => $_GET["surname"],
+        //                                                       "name" => $_GET["name"],
+        //                                                       "patronymic" => $_GET["patronymic"],
+        //                                                       "date_of_birth" => $_GET["date_of_birth"],
+        //                                                       "gender" => $_GET["gender"],
+        //                                                       "other_data" => $_GET["other_data"]), array("id" => $_GET["id"]))->send();
+      //  }
+        //else{
+        //    echo "Такой карточки не существует!"
+        //}
         
     }
 }
