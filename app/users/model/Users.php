@@ -152,12 +152,8 @@ class Users extends Model{
 
             $this->viewJSON($rows);
         }
-        
-        
-
-        }
     
-         public function InsUPD() {
+    public function InsUPD() {
             
              $stmt = self::$db->prepare("INSERT INTO `users_person_data`(`password`, `phone`, `phone_token`, `phone_token_data`, `doc_photo`, `surname`, `name`, `patronymic`, `date_of_birth`, `gender`, `other_data`) VALUES (:field_password, :phone, :phone_token, :phone_token_data, :doc_photo, :surname, :name, :patronymic, :date_of_birth, :gender, :other_data    )");
 
@@ -178,7 +174,7 @@ class Users extends Model{
                                                   
          }
     
-        public function InsUC(){
+    public function InsUC(){
             $stmt = self::$db->prepare("INSERT INTO `users_cards`(`level`, `user_type`, `image`, `nickname`, `rating`, `description`) VALUES (:level, :user_type, :image, :nickname, :rating, :description)");
             
             $stmt->bindValue(":level", self::$params_url["level"], PDO::PARAM_STR);
