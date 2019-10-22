@@ -56,7 +56,6 @@ class Users extends Model{
         
         else {
                 $GetID = Model::table("users_person_data")->add(array(
-                                                     "id" => self::$db -> lastInsertId("user_cards"),
                                                      "id_card" => self::$db -> lastInsertId("id_card"),
                                                      "password" => $_GET["password"],
                                                      "phone" => $_GET["phone"],
@@ -92,11 +91,11 @@ class Users extends Model{
             echo "Укажите все данные.";
         }
                 else{ 
-                        $GetID = Model::table("users_person_data")->edit(array(  "password" => $_GET["password"],
+                        $GetID = Model::table("users_person_data")->edit(array("password" => $_GET["password"],
                                                                         "phone" => $_GET["phone"],
-                                                                     "phone_token" => $_GET["phone_token"],
+                                                                        "phone_token" => $_GET["phone_token"],
                                                                         "phone_token_data" => $_GET["phone_token_data"],
-                                                                     "doc_photo" => $_GET["doc_photo"],
+                                                                        "doc_photo" => $_GET["doc_photo"],
                                                                         "surname" => $_GET["surname"],
                                                                         "name" => $_GET["name"],
                                                                         "patronymic" => $_GET["patronymic"],
