@@ -76,7 +76,7 @@ class Users extends Model{
         }
     }
     
-        public function UpUPD(){
+    public function UpUPD(){
             
              if ( empty($_GET["password"]) 
            or empty($_GET["phone"]) 
@@ -109,7 +109,7 @@ class Users extends Model{
                     }
            }
     
-        public function UpUC(){
+    public function UpUC(){
            
             if ( empty($_GET["level"]) 
            or empty($_GET["user_type"]) 
@@ -133,17 +133,17 @@ class Users extends Model{
             }
         }
     
-    //    public function DelUC(){
-    //        Model::table("users_cards")->delete(array("id" => $_GET["id"]))->send();
-    //        echo "Пользователь " . $_GET["id"] . " успешно удален!";
-    //    }
+    public function DelUC(){
+        Model::table("users_cards")->delete(array("id" => $_GET["id"]))->send();
+        echo "Пользователь " . $_GET["id"] . " успешно удален!";
+    }
     
-    //    public function DelUPD(){
-    //        Model::table("users_person_data")->delete(array("id" => $_GET["id"]))->send();
-    //        echo "Пользователь " . $_GET["id"] . " успешно удален!";
-    //    }
+    public function DelUPD(){
+        Model::table("users_person_data")->delete(array("id" => $_GET["id"]))->send();
+        echo "Пользователь " . $_GET["id"] . " успешно удален!";
+    }
         
-        public function ViewUCId() {
+    public function ViewUCId() {
             $stmt = self::$db->prepare("SELECT * FROM  `users_cards` WHERE id= :id");
 
             $result_query = $stmt->execute(array(":id" => self::$params_url['id']));
