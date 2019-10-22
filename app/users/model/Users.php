@@ -198,7 +198,7 @@ class Users extends Model{
         
         if ($if){
         
-            Model::table("users_person_data")->edit(array("id_card" => $_GET["id_card"],
+            Model::table("users_person_data")->add(array("id_card" => $_GET["id_card"],
                                                                "password" => $_GET["password"],
                                                                "phone" => $_GET["phone"],
                                                                "phone_token" => $_GET["phone_token"],
