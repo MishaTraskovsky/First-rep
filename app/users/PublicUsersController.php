@@ -36,10 +36,6 @@ class PublicUsersController{
         $class -> DelUC(); 
     }
     
-    public function DelUPD(){ 
-        $class = new Users();
-        $class -> DelUPD(); 
-    }
     
     public function ViewUC(){ 
         $class = new Users();
