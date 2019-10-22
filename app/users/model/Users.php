@@ -209,7 +209,7 @@ class Users extends Model{
                                                                "patronymic" => $_GET["patronymic"],
                                                                "date_of_birth" => $_GET["date_of_birth"],
                                                                "gender" => $_GET["gender"],
-                                                               "other_data" => $_GET["other_data"]), array("id" => $_GET["id"]))->send();
+                                                               "other_data" => $_GET["other_data"]))->send();
         }
         else{
             echo "Такой карточки не существует!";
