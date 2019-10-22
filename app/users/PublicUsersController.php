@@ -71,5 +71,11 @@ class PublicUsersController{
         $class -> delUC();
         
     }
+    
+    public function upUPDforUC(){
+        $class = new Users();
+        $class -> upUPDforUC();
+        
+    }
 }
     
