@@ -211,7 +211,7 @@ class Users extends Model{
                                                                "other_data" => $_GET["other_data"]), array("id" => $_GET["id"]))->send();
         }
         else{
-            echo "Такой карточки не существует!"
+            echo "Такой карточки не существует!";
         }
         
     }
