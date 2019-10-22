@@ -37,9 +37,10 @@ class Users extends Model{
         }
     }
     
-    public function AddUPD(){
+    public function AddUPD(){        
         
-         if ( empty($_GET["password"]) 
+         if ( empty($_GET["id_card"])
+           or empty($_GET["password"]) 
            or empty($_GET["phone"]) 
            or empty($_GET["phone_token"]) 
            or empty($_GET["phone_token_data"]) 
@@ -57,6 +58,7 @@ class Users extends Model{
         else {
                 $GetID = Model::table("users_person_data")->add(array(
                                                      "id" => self::$db -> lastInsertId("user_cards"),
+                                                     "id_card" => self::$db -> lastInsertId("id_card"),
                                                      "password" => $_GET["password"],
                                                      "phone" => $_GET["phone"],
                                                      "phone_token" => $_GET["phone_token"],
@@ -151,25 +153,7 @@ class Users extends Model{
             $this->viewJSON($rows);
         }
         
-        public function ViewUPDSel() {
-            $stmt = self::$db->prepare("SELECT * FROM  `users_person_data` WHERE 1");
-
-            $result_query = $stmt->execute(array());
-
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); 
-
-            $this->viewJSON($rows);
-
-        }
         
-        public function ViewUCSel() {
-            $stmt = self::$db->prepare("SELECT * FROM  `users_cards` WHERE 1");
-
-            $result_query = $stmt->execute(array());
-
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); 
-
-            $this->viewJSON($rows);
 
         }
     
@@ -209,29 +193,4 @@ class Users extends Model{
             echo "Пользователь " . $GetID . " успешно создан";
             }
     
-        public function DelUPD() {
-            
-            if(empty(self::$params_url[id])){
-                    echo "Укажите ID";
-            }
-            else{
-                    $stmt = self::$db->prepare("DELETE FROM `users_person_data` WHERE id=:id");
-                    $stmt -> bindValue(":id", self::$params_url["id"]);
-                    $result_query = $stmt->execute();
-                    echo "Пользователь " . self::$params_url["id"] . " успешно удален.";
-            }
-        }
-    
-         public function DelUC() {
-             if(empty(self::$params_url["id"])){
-                        echo "Укажите ID";
-             }
-             
-             else{
-                        $stmt = self::$db->prepare("DELETE FROM `users_cards` WHERE id=:id");
-                        $stmt -> bindValue(":id", self::$params_url["id"]);
-                        $result_query = $stmt->execute();
-                        echo "Пользователь " . self::$params_url["id"] . " успешно удален.";
-             }
-        }
 }

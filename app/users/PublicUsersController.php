@@ -11,7 +11,7 @@ class PublicUsersController{
     public function AddUC(){ 
         $class = new Users();
         $class -> AddUC();     
-    //level=3&user_type=user&image=0&nickname=nik&rating=2&description=text1
+    //level=3&user_type=user&image=1.jpg&nickname=nik&rating=2&description=text1
     }
     
     public function AddUPD(){ 
@@ -31,15 +31,15 @@ class PublicUsersController{
     //level=3&user_type=user&image=0&nickname=nik&rating=2&description=text1$id=1        
     }
     
-//    public function DelUC(){ 
-//       $class = new Users();
-//        $class -> DelUC(); 
-//    }
+    public function DelUC(){ 
+       $class = new Users();
+        $class -> DelUC(); 
+    }
     
-//    public function DelUPD(){ 
-//        $class = new Users();
-//        $class -> DelUPD(); 
-//    }
+    public function DelUPD(){ 
+        $class = new Users();
+        $class -> DelUPD(); 
+    }
     
     public function ViewUC(){ 
         $class = new Users();
@@ -51,20 +51,12 @@ class PublicUsersController{
         $class -> ViewUPD();     
     }
     
-    public function ViewUCSel(){ 
-        $class = new Users();
-        $class -> ViewUCSel();     
-    } 
     
     public function ViewUCId(){ 
         $class = new Users();
         $class -> ViewUCSel();     
     } 
     
-    public function ViewUPDSel(){ 
-        $class = new Users();
-        $class -> ViewUPDSel();     
-    }
     
     public function InsUPD(){ 
         $class = new Users();
