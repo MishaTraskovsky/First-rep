@@ -56,7 +56,7 @@ class Users extends Model{
         
         else {
                 $GetID = Model::table("users_person_data")->add(array(
-                                                     "id_card" => self::$db -> lastInsertId("id_card"),
+                                                     "id_card" => $_GET["id_card"],
                                                      "password" => $_GET["password"],
                                                      "phone" => $_GET["phone"],
                                                      "phone_token" => $_GET["phone_token"],
