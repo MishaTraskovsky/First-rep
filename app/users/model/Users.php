@@ -261,9 +261,6 @@ class Users extends Model{
                                                                                                         }
                                                                                                         else{
                                                                                                             echo "Введите id!";
-                                                                                                        }
-        
-        Model::table("users_person_data")->edit($ar, array("id" => $_GET["id"]))->send();
-        
+                                                                                                        }        
     }
 }
