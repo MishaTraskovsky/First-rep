@@ -254,6 +254,12 @@ class Users extends Model{
                                                                                                 if (!empty($_GET["other_data"])){
                                                                                                    $ar = array("other_data" => $_GET["other_data"]);
                                                                                             }
+                                                                                                        if (!empty($_GET["id"])){
+                                                                                                            $ar = array("id" => $_GET["id"]);
+                                                                                                        }
+                                                                                                        else{
+                                                                                                            echo "Введите id!"
+                                                                                                        }
         
         Model::table("users_person_data")->edit($ar, array("id" => $_GET["id"]))->send();
         
