@@ -77,5 +77,10 @@ class PublicUsersController{
         $class -> addUPDforUC();
         
     }
+    
+    public function editUPDfree({
+        $class = new Users();
+        $class -> editUPDfree();
+    })
 }
     
