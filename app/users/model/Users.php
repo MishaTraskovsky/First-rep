@@ -220,10 +220,10 @@ class Users extends Model{
     public function editUPDfree(){
        if (!empty($_GET["id_card"])){
            $ar = array("id_card" => $_GET["id_card"]);
-           else{
+       }
+        else{
                echo "Ошибка. введите значение id_card!"
            }
-       }
         if (!empty($_GET["password"])){
            $ar = array("password" => $_GET["password"]);
        }
