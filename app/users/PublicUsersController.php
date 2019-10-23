@@ -78,9 +78,9 @@ class PublicUsersController{
         
     }
     
-    public function editUPDfree({
+    public function editUPDfree(){
         $class = new Users();
         $class -> editUPDfree();
-    })
+    }
 }
     
