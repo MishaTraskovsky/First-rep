@@ -1,1 +1,1 @@
-console.log("widget include");
+alert("привет1")
