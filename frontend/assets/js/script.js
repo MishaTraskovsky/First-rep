@@ -1,5 +1,4 @@
 jQuery(function(){
     
-alert("привет1");
-    
-})
+$('h2').css({'color':'green'});
+});
