@@ -224,42 +224,42 @@ class Users extends Model{
         else{
                echo "Ошибка. введите значение id_card!"
            }
-        if (!empty($_GET["password"])){
-           $ar = array("password" => $_GET["password"]);
-       }
-        if (!empty($_GET["phone"])){
-           $ar = array("phone" => $_GET["phone"]);
-       }
-        if (!empty($_GET["phone_token"])){
-           $ar = array("phone_token" => $_GET["phone_token"]);
-       }
-        if (!empty($_GET["phone_token_data"])){
-           $ar = array("phone_token_data" => $_GET["phone_token_data"]);
-       }
-        if (!empty($_GET["doc_photo"])){
-           $ar = array("doc_photo" => $_GET["doc_photo"]);
-       }
-        if (!empty($_GET["surname"])){
-           $ar = array("surname" => $_GET["surname"]);
-       }
-        if (!empty($_GET["name"])){
-           $ar = array("name" => $_GET["name"]);
-       }
-        if (!empty($_GET["patronymic"])){
-           $ar = array("patronymic" => $_GET["patronymic"]);
-       }
-        if (!empty($_GET["date_of_birth"])){
-           $ar = array("date_of_birth" => $_GET["date_of_birth"]);
-       }
-        if (!empty($_GET["gender"])){
-           $ar = array("gender" => $_GET["gender"]);
-       }
-        else{
-            echo "Введите значение male или female."
-        }
-        if (!empty($_GET["other_data"])){
-           $ar = array("other_data" => $_GET["other_data"]);
-       }
+                if (!empty($_GET["password"])){
+                   $ar = array("password" => $_GET["password"]);
+            }
+                        if (!empty($_GET["phone"])){
+                           $ar = array("phone" => $_GET["phone"]);
+                    }       
+                                if (!empty($_GET["phone_token"])){
+                                   $ar = array("phone_token" => $_GET["phone_token"]);
+                            }
+                                        if (!empty($_GET["phone_token_data"])){
+                                           $ar = array("phone_token_data" => $_GET["phone_token_data"]);
+                                    }
+                                                if (!empty($_GET["doc_photo"])){
+                                                   $ar = array("doc_photo" => $_GET["doc_photo"]);
+                                            }
+                                                        if (!empty($_GET["surname"])){
+                                                           $ar = array("surname" => $_GET["surname"]);
+                                                    }
+                                                                if (!empty($_GET["name"])){
+                                                                   $ar = array("name" => $_GET["name"]);
+                                                            }
+                                                                        if (!empty($_GET["patronymic"])){
+                                                                           $ar = array("patronymic" => $_GET["patronymic"]);
+                                                                    }
+                                                                                if (!empty($_GET["date_of_birth"])){
+                                                                                   $ar = array("date_of_birth" => $_GET["date_of_birth"]);
+                                                                            }
+                                                                                        if (!empty($_GET["gender"])){
+                                                                                           $ar = array("gender" => $_GET["gender"]);
+                                                                                    }
+                                                                                        else{
+                                                                                            echo "Введите значение male или female."
+                                                                                        }
+                                                                                                if (!empty($_GET["other_data"])){
+                                                                                                   $ar = array("other_data" => $_GET["other_data"]);
+                                                                                            }
         
         Model::table("users_person_data")->edit(array("password" => $_GET["password"],
                                                       "phone" => $_GET["phone"],
