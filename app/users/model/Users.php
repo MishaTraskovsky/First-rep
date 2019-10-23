@@ -218,9 +218,9 @@ class Users extends Model{
     }
     
     public function editUPDfree(){
-       if (!empty($_GET["id_card"])){
-           $ar = array("id_card" => $_GET["id_card"]);
-       }
+       if (!empty($_GET["id"])){
+           $ar = array("id" => $_GET["id"]);
+           
                 if (!empty($_GET["password"])){
                    $ar = array("password" => $_GET["password"]);
             }
@@ -254,15 +254,14 @@ class Users extends Model{
                                                                                                 if (!empty($_GET["other_data"])){
                                                                                                    $ar = array("other_data" => $_GET["other_data"]);
                                                                                             }
-                                                                                                        if (!empty($_GET["id"])){
-                                                                                                            $ar = array("id" => $_GET["id"]);
-                                                                                                                    
+                                                                                                        if (!empty($_GET["id_card"])){
+                                                                                                            $ar = array("id_card" => $_GET["id_card"]);
+                                                                                                        }  
+               Model::table("users_person_data")->edit($ar, array("id" => $_GET["id"]))->send();
 
-                                                                                                        }
-                                                                                                        else{
-                                                                                                            echo "Введите id!";
-                                                                                                        }        
-        
-        Model::table("users_person_data")->edit($ar, array("id" => $_GET["id"]))->send();
+       }
+         else{
+             echo "Введите id!";
+         }
     }
 }
