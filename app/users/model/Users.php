@@ -222,7 +222,7 @@ class Users extends Model{
            $ar = array("id_card" => $_GET["id_card"]);
        }
         else{
-               echo "Ошибка. введите значение id_card!"
+               echo "Ошибка. введите значение id_card!";
            }
                 if (!empty($_GET["password"])){
                    $ar = array("password" => $_GET["password"]);
@@ -255,7 +255,7 @@ class Users extends Model{
                                                                                            $ar = array("gender" => $_GET["gender"]);
                                                                                     }
                                                                                         else{
-                                                                                            echo "Введите значение male или female."
+                                                                                            echo "Введите значение male или female.";
                                                                                         }
                                                                                                 if (!empty($_GET["other_data"])){
                                                                                                    $ar = array("other_data" => $_GET["other_data"]);
