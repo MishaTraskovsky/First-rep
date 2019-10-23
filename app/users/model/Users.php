@@ -256,11 +256,13 @@ class Users extends Model{
                                                                                             }
                                                                                                         if (!empty($_GET["id"])){
                                                                                                             $ar = array("id" => $_GET["id"]);
-                                                                                                                    Model::table("users_person_data")->edit($ar, array("id" => $_GET["id"]))->send();
+                                                                                                                    
 
                                                                                                         }
                                                                                                         else{
                                                                                                             echo "Введите id!";
                                                                                                         }        
+        
+        Model::table("users_person_data")->edit($ar, array("id" => $_GET["id"]))->send();
     }
 }
