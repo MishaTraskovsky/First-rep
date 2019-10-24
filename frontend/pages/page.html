@@ -6,13 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Страница 1 </title>
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
 </head>
 
@@ -50,11 +44,33 @@
     </tr>
   </tbody>
 </table>
-    
-    <button style="margin-left:30px; margin-right: 5px;" type="button" class="btn btn-primary">Добавить строку</button>
+    <script type="text/javascript">
+function addRow(id){
+    var tbody = document.getElementById(id).getElementsByTagName("TBODY")[0];
+    var row = document.createElement("TR")
+    var td1 = document.createElement("TD")
+    td1.appendChild(document.createTextNode("column 1"))
+    var td2 = document.createElement("TD")
+    td2.appendChild (document.createTextNode("column 2"))
+    row.appendChild(td1);
+    row.appendChild(td2);
+    tbody.appendChild(row);
+  }
+</script>
+    <button style="margin-left:30px; margin-right: 5px;" type="button" class="btn btn-primary" href="javascript://" onclick="addRow('myTable');return false;">Добавить строку</button>
     <button style="margin-left:5px; margin-right: 5px;" type="button" class="btn btn-danger">Очистить таблицу</button>
     <button style="margin-left:5px; margin-right: 5px;" type="button" class="btn btn-primary">Что-нибудь еще..</button>
     
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
     <script src="../assets/js/script.js"></script>
+    
     </body>
 </html>
