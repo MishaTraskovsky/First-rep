@@ -26,14 +26,14 @@ class Users extends Model{
         }
         
         else{        
-                $GetID = Model::table("users_cards")->add(array("level" => $_GET["level"],
+                $getID = Model::table("users_cards")->add(array("level" => $_GET["level"],
                                                "user_type" => $_GET["user_type"],
                                                "image" => $_GET["image"],
                                                "nickname" => $_GET["nickname"],
                                                "rating" => $_GET["rating"],
                                                "description" => $_GET["description"]))->send();
             
-                echo "Пользователь " . $GetID ." успешно создан!";
+                echo "Пользователь " . $getID ." успешно создан!";
         }
     }
     
@@ -55,7 +55,7 @@ class Users extends Model{
         }   
         
         else {
-                $GetID = Model::table("users_person_data")->add(array(
+                $getID = Model::table("users_person_data")->add(array(
                                                      "id_card" => $_GET["id_card"],
                                                      "password" => $_GET["password"],
                                                      "phone" => $_GET["phone"],
@@ -70,7 +70,7 @@ class Users extends Model{
                                                      "other_data" => $_GET["other_data"]))->send();
                                                      
           
-                echo "Пользователь " . $GetID ." успешно создан!"; 
+                echo "Пользователь " . $getID ." успешно создан!"; 
         }
     }
     
@@ -91,7 +91,7 @@ class Users extends Model{
             echo "Укажите все данные.";
         }
                 else{ 
-                        $GetID = Model::table("users_person_data")->edit(array("password" => $_GET["password"],
+                        $getID = Model::table("users_person_data")->edit(array("password" => $_GET["password"],
                                                                                "phone" => $_GET["phone"],
                                                                                "phone_token" => $_GET["phone_token"],
                                                                                "phone_token_data" => $_GET["phone_token_data"],
@@ -103,7 +103,7 @@ class Users extends Model{
                                                                                "gender" => $_GET["gender"],
                                                                                "other_data" => $_GET["other_data"]), array("id" => $_GET["id"]))->send();
         
-                        echo "Пользователь " . $GetID ."изменен!";
+                        echo "Пользователь " . $getID ."изменен!";
                     }
     }
     
@@ -121,13 +121,13 @@ class Users extends Model{
             
             else{
             
-                        $GetID = Model::table("users_cards")->edit(array("level" => $_GET["level"],
+                        $getID = Model::table("users_cards")->edit(array("level" => $_GET["level"],
                                                          "user_type" => $_GET["user_type"],
                                                          "image" => $_GET["image"],
                                                          "nickname" => $_GET["nickname"],
                                                          "rating" => $_GET["rating"],
                                                          "description" => $_GET["description"]), array("id" => $_GET["id"]))->send();
-                        echo "Пользователь " . $GetID ."изменен!";
+                        echo "Пользователь " . $getID ."изменен!";
             }
     }
     
@@ -167,7 +167,7 @@ class Users extends Model{
              $stmt->bindValue(":other_data", self::$params_url['other_data'], PDO::PARAM_STR);
              $result_query = $stmt->execute();
              $GetID = self::$db -> lastInsertId();
-             echo "Пользователь " . $GetID. " успешно создан";
+             echo "Пользователь " . $getID. " успешно создан";
                                                 
     }
   
@@ -182,8 +182,8 @@ class Users extends Model{
             $stmt->bindValue(":description", self::$params_url["description"], PDO::PARAM_STR);
             $result_query = $stmt->execute();
             
-            $GetID = self::$db -> lastInsertId();
-            echo "Пользователь " . $GetID . " успешно создан";
+            $getID = self::$db -> lastInsertId();
+            echo "Пользователь " . $getID . " успешно создан";
     }
     
     
