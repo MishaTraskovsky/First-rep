@@ -19,7 +19,7 @@ $(document).ready(function(){
  datatype: 'json',
  data: {},
  jsonpCallback: 'drawTable'
- 
+    })
 
 function drawTable(data) {
   var html = '';
@@ -27,4 +27,5 @@ function drawTable(data) {
     html += '<tr><td>' + data[i].course + '</td><td>' + data[i].name + '</td><td>' + data[i].price + '</td></tr>';
   }
   $('.table .upd').append(html);
+};
 });
