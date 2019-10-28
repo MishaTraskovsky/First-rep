@@ -21,9 +21,9 @@ $(document).ready(function(){
  success: function ( data) {
                         var data = jQuery.parseJSON(JSON.stringify(data));
                         var html = '';
-                       // for (var i = 0; i < data.result.length; i++) {
-                       //        html += '<tbody><tr><td>' + data.result.id[i] + '</td><td>' + data.result.id_card[i] + '</td><td>' + data.result.password[i] + '</td><td>' + data.result.phone[i] + '</td><td>' + data.result.phone_token[i] + '</td><td>' + data.result.idphone_token_data[i] + '</td><td>' + data.result.doc_photo[i] + '</td><td>' + data.result.surname[i] + '</td><td>' + data.result.name[i] + '</td><td>' + data.result.patronymic[i] + '</td><td>' + data.result.date_of_birth[i] + '</td><td>' + data.result.gender[i] + '</td><td>' + data.result.other_data[i] + '</td></tr></tbody>';
-                        //}
+                        for (var i = 0; i < data.result.length; i++) {
+                              html += '<tbody><tr><td>' + data.result[i].id + '</td><td>' + data.result[i].id_card + '</td><td>' + data.result[i].password + '</td><td>' + data.result[i].phone + '</td><td>' + data.result[i].phone_token + '</td><td>' + data.result[i].idphone_token_data + '</td><td>' + data.result[i].doc_photo + '</td><td>' + data.result[i].surname + '</td><td>' + data.result[i].name + '</td><td>' + data.result[i].patronymic + '</td><td>' + data.result[i].date_of_birth + '</td><td>' + data.result[i].gender + '</td><td>' + data.result[i].other_data + '</td></tr></tbody>';
+                        }
                         console.log(data.result[0].id);
                         $('.upd').append(html);
           },
