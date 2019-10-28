@@ -18,19 +18,19 @@ $(document).ready(function(){
  type: 'GET',
  datatype: 'json',
  data: {},
- success: 'drawTable',
- error:  function() {
-        alert("Error is occured");
-        }
-    })
- 
-
-function drawTable(data) {
+ success: function drawTable(data) {
   var html = '';
   for (var i = 0; i < data.length; i++) {
     html += '<tbody><tr><td>' + data[i].id + '</td><td>' + data[i].id_card + '</td><td>' + data[i].password + '</td><td>' + data[i].phone + '</td><td>' + data[i].phone_token + '</td><td>' + data[i].phone_token_data + '</td><td>' + data[i].doc_photo + '</td><td>' + data[i].surname + '</td><td>' + data[i].name + '</td><td>' + data[i].patronymic + '</td><td>' + data[i].date_of_birth + '</td><td>' + data[i].gender + '</td><td>' + data[i].other_data + '</td></tr></tbody>';
   }
     console.log("suc");
   $('.upd').append(html);
-};
+},
+ error:  function() {
+        alert("Error is occured");
+        }
+    })
+ 
+
+
 });
