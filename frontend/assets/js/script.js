@@ -24,7 +24,7 @@ $(document).ready(function(){
                        // for (var i = 0; i < data.result.length; i++) {
                        //        html += '<tbody><tr><td>' + data.result.id[i] + '</td><td>' + data.result.id_card[i] + '</td><td>' + data.result.password[i] + '</td><td>' + data.result.phone[i] + '</td><td>' + data.result.phone_token[i] + '</td><td>' + data.result.idphone_token_data[i] + '</td><td>' + data.result.doc_photo[i] + '</td><td>' + data.result.surname[i] + '</td><td>' + data.result.name[i] + '</td><td>' + data.result.patronymic[i] + '</td><td>' + data.result.date_of_birth[i] + '</td><td>' + data.result.gender[i] + '</td><td>' + data.result.other_data[i] + '</td></tr></tbody>';
                         //}
-                        console.log(data.result.id);
+                        console.log(data.result[0].id);
                         $('.upd').append(html);
           },
  error:  function() {
