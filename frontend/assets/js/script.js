@@ -18,8 +18,12 @@ $(document).ready(function(){
  type: 'GET',
  datatype: 'json',
  data: {},
- jsonpCallback: 'drawTable'
+ success: 'drawTable',
+ error:  function() {
+        alert("Error is occured");
+        }
     })
+ 
 
 function drawTable(data) {
   var html = '';
