@@ -6,7 +6,8 @@ $(document).ready(function(){
     });
     
     $('#clear').click(function() {
-       $('.table > tr').empty();    
+       $('.table').empty();
+       $('.table').append('<thead><tr><th scope="col">#</th><th scope="col">First</th><th scope="col">Last</th><th scope="col">Handle</th></tr></thead>');
         console.log("clear");
     });
 });
