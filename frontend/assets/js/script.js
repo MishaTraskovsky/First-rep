@@ -18,7 +18,7 @@ $(document).ready(function(){
  type: 'GET',
  datatype: 'json',
  data: {},
- success: function (    data) {
+ success: function ( data) {
                         var data = JSON.stringify(data);
                         var html = '';
                         //for (var i = 0; i < data.length; i++) {
