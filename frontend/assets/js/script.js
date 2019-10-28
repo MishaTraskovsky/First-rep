@@ -19,14 +19,7 @@ $(document).ready(function(){
  datatype: 'json',
  data: {},
  jsonpCallback: 'drawTable'
- success: function(data){
-    // Check if username is available or not
-    console.log(data); 
- },
- error: function(){
-    alert('Much wrong, such sad');
- }
-});
+ 
 
 function drawTable(data) {
   var html = '';
