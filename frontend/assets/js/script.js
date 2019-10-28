@@ -20,9 +20,9 @@ $(document).ready(function(){
  data: {},
  success: function (data) {
       var data = JSON.stringify(data);
-      var    html = '';
+      var html = '';
      for (var i = 0; i < data.length; i++) {
-    html += '<tbody><tr><td>' + data[i].result.id + '</td><td>' + data[i].id_card + '</td><td>' + data[i].password + '</td><td>' + data[i].phone + '</td><td>' + data[i].phone_token + '</td><td>' + data[i].phone_token_data + '</td><td>' + data[i].doc_photo + '</td><td>' + data[i].surname + '</td><td>' + data[i].name + '</td><td>' + data[i].patronymic + '</td><td>' + data[i].date_of_birth + '</td><td>' + data[i].gender + '</td><td>' + data[i].other_data + '</td></tr></tbody>';
+    html += '<tbody><tr><td>' + data.result.id[i] + '</td><td>' + data[i].id_card + '</td><td>' + data[i].password + '</td><td>' + data[i].phone + '</td><td>' + data[i].phone_token + '</td><td>' + data[i].phone_token_data + '</td><td>' + data[i].doc_photo + '</td><td>' + data[i].surname + '</td><td>' + data[i].name + '</td><td>' + data[i].patronymic + '</td><td>' + data[i].date_of_birth + '</td><td>' + data[i].gender + '</td><td>' + data[i].other_data + '</td></tr></tbody>';
   }
     console.log(data);
   $('.upd').append(html);
