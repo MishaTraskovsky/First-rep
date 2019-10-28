@@ -6,7 +6,7 @@ $(document).ready(function(){
     });
     
     $('#clear').click(function() {
-       $('.table').remove();    
+       $('.table').empty();    
         console.log("clear");
     });
 });
