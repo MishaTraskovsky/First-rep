@@ -89,7 +89,7 @@ class Users extends Model{
            or empty($_GET["other_data"])){
             
             echo "Укажите все данные.";
-        }
+            }
                 else{ 
                         $getID = Model::table("users_person_data")->edit(array("password" => $_GET["password"],
                                                                                "phone" => $_GET["phone"],
@@ -104,7 +104,7 @@ class Users extends Model{
                                                                                "other_data" => $_GET["other_data"]), array("id" => $_GET["id"]))->send();
         
                         echo "Пользователь " . $getID ."изменен!";
-                    }
+                }
     }
     
     public function upUC(){
