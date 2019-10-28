@@ -25,5 +25,5 @@ $(document).ready(function(){
  error: function(){
     alert('Much wrong, such sad');
  }
-});)
+});
 });
