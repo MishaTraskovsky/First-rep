@@ -18,6 +18,7 @@ $(document).ready(function(){
  type: 'GET',
  datatype: 'json',
  data: {},
+ jsonpCallback: 'drawTable'
  success: function(data){
     // Check if username is available or not
     console.log(data); 
@@ -26,4 +27,11 @@ $(document).ready(function(){
     alert('Much wrong, such sad');
  }
 });
+
+function drawTable(data) {
+  var html = '';
+  for (var i = 0; i < data.length; i++) {
+    html += '<tr><td>' + data[i].course + '</td><td>' + data[i].name + '</td><td>' + data[i].price + '</td></tr>';
+  }
+  $('.table .upd').append(html);
 });
