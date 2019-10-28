@@ -145,7 +145,7 @@ class Users extends Model{
             $stmt = self::$db->prepare("SELECT * FROM  `users_cards` WHERE id= :id");
 
             $result_query = $stmt->execute(array(":id" => self::$params_url['id']));
-rows = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
             $this->viewJSON($rows);
     }
@@ -187,7 +187,7 @@ rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
     
-    public function addUPDforUC(){
+    public function addUPDforPkey(){
         
         $stmt = self::$db->prepare("SELECT EXISTS (SELECT id FROM `users_cards` WHERE id=:id_card) AS value");
 
@@ -216,50 +216,50 @@ rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
     }
     
-    public function editUPDfree(){
+    public function editAnyUPD(){
         if (!empty($_GET["id"])){
            $ar = array("id" => $_GET["id"]);
            
                 if (!empty($_GET["password"])){
                     $ar = array("password" => $_GET["password"]);
-                    }
+                }
                 if (!empty($_GET["phone"])){
                    $ar = array("phone" => $_GET["phone"]);
-                    }       
+                }       
                 if (!empty($_GET["phone_token"])){
                    $ar = array("phone_token" => $_GET["phone_token"]);
-                    }
+                }
                 if (!empty($_GET["phone_token_data"])){
                    $ar = array("phone_token_data" => $_GET["phone_token_data"]);
-                    }
+                }
                 if (!empty($_GET["doc_photo"])){
                    $ar = array("doc_photo" => $_GET["doc_photo"]);
-                    }
+                }
                 if (!empty($_GET["surname"])){
                    $ar = array("surname" => $_GET["surname"]);
-                    }
+                }
                 if (!empty($_GET["name"])){
                    $ar = array("name" => $_GET["name"]);
-                    }
+                }
                 if (!empty($_GET["patronymic"])){
                    $ar = array("patronymic" => $_GET["patronymic"]);
-                    }
+                }
                 if (!empty($_GET["date_of_birth"])){
                    $ar = array("date_of_birth" => $_GET["date_of_birth"]);
-                    }
+                }
                 if (!empty($_GET["gender"])){
                    $ar = array("gender" => $_GET["gender"]);
-                    }
+                }
                 if (!empty($_GET["other_data"])){
                    $ar = array("other_data" => $_GET["other_data"]);
-                    }
+                }
                 if (!empty($_GET["id_card"])){
                  $ar = array("id_card" => $_GET["id_card"]);
-                    }  
+                }  
                
                 Model::table("users_person_data")->edit($ar, array("id" => $_GET["id"]))->send();
 
-    }
+        }
          else{
              echo "Введите id!";
          }

@@ -12,4 +12,18 @@ $(document).ready(function(){
        $('.table').append('<thead><tr><th scope="col">#</th><th scope="col">First</th><th scope="col">Last</th><th scope="col">Handle</th></tr></thead>');
         console.log("clear");
     });
+    
+    $('.upd').append(
+    $.ajax({
+ url: 'index.php?page=register', //This is the current doc
+ type: 'POST',
+ datatype: 'json',
+ data: {'userCheck': username},
+ success: function(data){
+    // Check if username is available or not
+ },
+ error: function(){
+    alert('Much wrong, such sad');
+ }
+});)
 });
