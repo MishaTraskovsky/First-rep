@@ -12,15 +12,15 @@ $(document).ready(function(){
        $('.table').append('<thead><tr><th scope="col">#</th><th scope="col">First</th><th scope="col">Last</th><th scope="col">Handle</th></tr></thead>');
         console.log("clear");
     });
-    
-    $('.upd').append(
+   
     $.ajax({
- url: 'index.php?page=register', //This is the current doc
- type: 'POST',
+ url: 'https://m.qzo.su/api/users/viewUPD', 
+ type: 'GET',
  datatype: 'json',
- data: {'userCheck': username},
+ data: {},
  success: function(data){
     // Check if username is available or not
+    console.log(data); 
  },
  error: function(){
     alert('Much wrong, such sad');
