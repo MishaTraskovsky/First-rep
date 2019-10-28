@@ -44,20 +44,7 @@
     </tr>
   </tbody>
 </table>
-    <script type="text/javascript">
-function addRow(id){
-    var tbody = document.getElementById(id).getElementsByTagName("TBODY")[0];
-    var row = document.createElement("TR")
-    var td1 = document.createElement("TD")
-    td1.appendChild(document.createTextNode("column 1"))
-    var td2 = document.createElement("TD")
-    td2.appendChild (document.createTextNode("column 2"))
-    row.appendChild(td1);
-    row.appendChild(td2);
-    tbody.appendChild(row);
-  }
-</script>
-    <button style="margin-left:30px; margin-right: 5px;" type="button" class="btn btn-primary" href="javascript://" onclick="addRow('myTable');return false;">Добавить строку</button>
+    <button style="margin-left:30px; margin-right: 5px;" type="button" class="btn btn-primary"  href="javascript://">Добавить строку</button>
     <button style="margin-left:5px; margin-right: 5px;" type="button" class="btn btn-danger">Очистить таблицу</button>
     <button style="margin-left:5px; margin-right: 5px;" type="button" class="btn btn-primary">Что-нибудь еще..</button>
     
