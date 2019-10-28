@@ -22,9 +22,9 @@ $(document).ready(function(){
                         var data = jQuery.parseJSON(JSON.stringify(data));
                         var html = '';
                         for (var i = 0; i < data.result.length; i++) {
-                                html += '<tbody><tr><td>' + data.result[0].id + '</td><td>' + data.result[0].id_card + '</td><td>' + data.result[0].password + '</td><td>' + data.result[0].phone +'</td><td>' + data.result[0].phone_token + '</td><td>' + data.result[0].phone_token_data + '</td><td>' + data.result[0].doc_photo + '</td><td>' + data.result[0].surname '</td><td>' + data.result[0].name + '</td><td>' + data.result[0].patronymic + '</td><td>' + data.result[0].date_of_birth + '</td><td>' + data.result[0].gender + '</td><td>' +  data.result[0].other_data + '</td></tr></tbody>';
+                                html += '<tbody><tr><td>' + data.result[i].id + '</td><td>' + data.result[i].id_card + '</td><td>' + data.result[i].password + '</td><td>' + data.result[i].phone +'</td><td>' + data.result[i].phone_token + '</td><td>' + data.result[i].phone_token_data + '</td><td>' + data.result[i].doc_photo + '</td><td>' + data.result[i].surname '</td><td>' + data.result[i].name + '</td><td>' + data.result[i].patronymic + '</td><td>' + data.result[i].date_of_birth + '</td><td>' + data.result[i].gender + '</td><td>' +  data.result[i].other_data + '</td></tr></tbody>';
                         }
-                        console.log(data.result[0].id);
+                        console.log(data.result.id);
                         $('.upd').append(html);
           },
  error:  function() {
