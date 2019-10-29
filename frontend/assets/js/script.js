@@ -35,7 +35,7 @@ $.ajax({
         }
     });
     
-$('.sortA').click(
+$('.sortA').click(function(){
     $.ajax({
         url: 'https://m.qzo.su/api/users/viewUPDsortA', 
         type: 'GET',
@@ -47,10 +47,10 @@ $('.sortA').click(
                     $('.table').append('<thead><tr><th scope="col">id</th><th scope="col">id_card</th><th scope="col">password</th><th scope="col">phone</th><th scope="col">phone_token</th><th scope="col">phone_token_data</th><th scope="col">doc_photo</th><th scope="col">surname</th><th scope="col">name</th><th scope="col">patronymic</th><th scope="col">date_of_birth</th><th scope="col">gender</th><th scope="col">other_data</th></tr></thead>');
                     console.log("Sort by ASC succsess");
                     }
-        }));
+        })});
     
     
-$('.sortD').click(
+$('.sortD').click(function(){
     $.ajax({
         url: 'https://m.qzo.su/api/users/viewUPDsortD', 
         type: 'GET',
@@ -62,7 +62,7 @@ $('.sortD').click(
                     $('.table').append('<thead><tr><th scope="col">id</th><th scope="col">id_card</th><th scope="col">password</th><th scope="col">phone</th><th scope="col">phone_token</th><th scope="col">phone_token_data</th><th scope="col">doc_photo</th><th scope="col">surname</th><th scope="col">name</th><th scope="col">patronymic</th><th scope="col">date_of_birth</th><th scope="col">gender</th><th scope="col">other_data</th></tr></thead>');
                     console.log("Sort by DESC succsess");
                     }
-        }));
+        })});
  
 
 });
