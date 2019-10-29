@@ -30,4 +30,4 @@ $.ajax({
  error:  function() {
         alert("Error is occured");
         }
-    });
+    })
