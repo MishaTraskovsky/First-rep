@@ -39,7 +39,7 @@ $('#sortA').click(
         datatype: 'json',
         data: {},
         success:    table( data),
-                    console.log("Sort by ASC succsess"),
+                    //console.log("Sort by ASC succsess"),
             }))
  
 $('#sortD').click(
@@ -50,7 +50,7 @@ $('#sortD').click(
         data: {},
         success: function (){
                     table( data);
-                    console.log("Sort by DESC succsess");
+                    //console.log("Sort by DESC succsess");
                  }   
 }))
 });
