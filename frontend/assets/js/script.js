@@ -49,9 +49,8 @@ $('.sortA').click(function(){
                     console.log("Sort by ASC succsess");
                     }
         })});
-    
-    
-$('.sortD').click(function(){
+   
+    $('.sortD').click(function(){
     $.ajax({
         url: 'https://m.qzo.su/api/users/viewUPDsortD', 
         type: 'GET',
@@ -64,6 +63,8 @@ $('.sortD').click(function(){
                     console.log("Sort by DESC succsess");
                     }
         })});
- 
+    
+    
+
 
 });
