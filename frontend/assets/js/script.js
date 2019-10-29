@@ -38,8 +38,8 @@ $('#sortA').click(
         type: 'GET',
         datatype: 'json',
         data: {},
-        success:    table( data);
-                    console.log("Sort by ASC succsess");
+        success:    table( data),
+                    console.log("Sort by ASC succsess"),
             }))
  
 $('#sortD').click(
