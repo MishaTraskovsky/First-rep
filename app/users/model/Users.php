@@ -268,7 +268,7 @@ class Users extends Model{
     public function viewUPDsortD() {
             $stmt = self::$db->prepare("SELECT * FROM  `users_personal_data` ORDER BY id DESC");
 
-            $result_query = $stmt->execute(array());
+            $result_query = $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); 
             $this->viewJSON($rows);
     }
@@ -276,7 +276,7 @@ class Users extends Model{
     public function viewUPDsortA() {
             $stmt = self::$db->prepare("SELECT * FROM  `users_personal_data` ORDER BY id ASC");
 
-            $result_query = $stmt->execute(array());
+            $result_query = $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); 
             $this->viewJSON($rows);
     }
