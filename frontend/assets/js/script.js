@@ -29,6 +29,7 @@ $.ajax({
  data: {},
  success: function (data) {
                         table ( data);
+                        console.log("download")
           },
  error:  function() {
         alert("Error is occured");
