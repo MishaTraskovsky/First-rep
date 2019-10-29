@@ -13,12 +13,12 @@ $(document).ready(function(){
         console.log("clear");
     });
    
-$.ajax({
-    url: 'https://m.qzo.su/api/users/viewUPD', 
-    type: 'GET',
-    datatype: 'json',
-    data: {},
-    success: function ( data) {
+    $.ajax({
+ url: 'https://m.qzo.su/api/users/viewUPD', 
+ type: 'GET',
+ datatype: 'json',
+ data: {},
+ success: function ( data) {
                         var data = jQuery.parseJSON(JSON.stringify(data));
                         var html = '';
                         for (var i = 0; i < data.result.length; i++) {
@@ -31,3 +31,8 @@ $.ajax({
         alert("Error is occured");
         }
     })
+ 
+
+
+
+});
