@@ -30,7 +30,7 @@ $.ajax({
  error:  function() {
         alert("Error is occured");
         }
-    })
+    });
     
 //$('#sortA').click(
 //    $.ajax({
