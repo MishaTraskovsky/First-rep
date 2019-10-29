@@ -29,7 +29,7 @@ $.ajax({
  data: {},
  success: function (data) {
                         table ( data);
-          }
+          },
  error:  function() {
         alert("Error is occured");
         }
