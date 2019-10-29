@@ -82,5 +82,15 @@ class PublicUsersController{
         $class = new Users();
         $class -> editUPDfree();
     }
+    
+    public function viewUPDsortD(){
+        $class = new Users();
+        $class -> viewUPDsortD();
+    }
+    
+    public function viewUPDsortA(){
+        $class = new Users();
+        $class -> viewUPDsortD();
+    }
 }
     
