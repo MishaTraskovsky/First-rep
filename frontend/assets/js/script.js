@@ -22,20 +22,8 @@ $(document).ready(function(){
                         $('.upd').append(html);
           } 
     
-$.ajax({
- url: 'https://m.qzo.su/api/users/viewUPD', 
- type: 'GET',
- datatype: 'json',
- data: {},
- success: function (data) {
-                        table ( data);
-          },
- error:  function() {
-        alert("Error is occured");
-        }
-    });
-    
-    $('#sortA').click(
+
+$('#sortA').click(
     $.ajax({
         url: 'https://m.qzo.su/api/users/viewUPDsortA', 
         type: 'GET',
@@ -50,7 +38,7 @@ $.ajax({
         }));
     
     
-    $('#sortD').click(
+$('#sortD').click(
     $.ajax({
         url: 'https://m.qzo.su/api/users/viewUPDsortD', 
         type: 'GET',
