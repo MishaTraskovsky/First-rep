@@ -39,7 +39,7 @@ class PublicUsersController{
     //level=3&user_type=user&image=0&nickname=nik&rating=2&description=text1$id=1        
     }
     
-    public function del_user_cards(){ 
+    public function     del_user_cards(){ 
     $class = new Users();
     $class -> del_user_cards(); 
     $class -> view_users_cards();
