@@ -33,16 +33,16 @@ $(document).ready(function(){
     })
  
 
-$('#add_open').
+//$('#add_open').
     
-$.ajax({
-    url: 'https://m.qzo.su/api/users/',
-    type: 'GET',
-    datatype: 'json',
-    data: {},
-    succsess: function (data) {
-        
-    }
-})
+//$.ajax({
+//    url: 'https://m.qzo.su/api/users/',
+//    type: 'GET',
+//    datatype: 'json',
+//    data: {},
+//    succsess: function (data) {
+//        
+//    }
+//})
 
 });
