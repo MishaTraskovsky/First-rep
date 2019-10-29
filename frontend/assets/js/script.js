@@ -31,4 +31,3 @@ $.ajax({
         alert("Error is occured");
         }
     });
-    
