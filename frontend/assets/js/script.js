@@ -13,12 +13,12 @@ $(document).ready(function(){
         console.log("clear");
     });
    
-    $.ajax({
- url: 'https://m.qzo.su/api/users/viewUPD', 
- type: 'GET',
- datatype: 'json',
- data: {},
- success: function ( data) {
+$.ajax({
+    url: 'https://m.qzo.su/api/users/viewUPD', 
+    type: 'GET',
+    datatype: 'json',
+    data: {},
+    success: function ( data) {
                         var data = jQuery.parseJSON(JSON.stringify(data));
                         var html = '';
                         for (var i = 0; i < data.result.length; i++) {
@@ -31,18 +31,12 @@ $(document).ready(function(){
         alert("Error is occured");
         }
     })
- 
-
-//$('#add_open').
     
-//$.ajax({
-//    url: 'https://m.qzo.su/api/users/',
-//    type: 'GET',
-//    datatype: 'json',
-//    data: {},
-//    succsess: function (data) {
-//        
-//    }
-//})
+$('#sortA').click($.ajax({
+    url: 'https://m.qzo.su/api/users/viewUPDsortA', 
+    type: 'GET',
+    datatype: 'json',
+    data: {},
+    success: console.log("Sort by ASC succsess");
 
-});
+});)
