@@ -49,7 +49,7 @@ $('#sortD').click(
         datatype: 'json',
         data: {},
         success: function (){
-                    table( data);
+                    table( data)
                     //console.log("Sort by DESC succsess");
                  }   
 }))
