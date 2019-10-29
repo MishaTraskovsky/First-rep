@@ -264,17 +264,16 @@ class Users extends Model{
              echo "Введите id!";
          }
     }
-    
-    public function viewUPDsortD() {
-            $stmt = self::$db->prepare("SELECT * FROM  `users_personal_data` ORDER BY id DESC");
-
-            $result_query = $stmt->execute();
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); 
-            $this->viewJSON($rows);
-    }
-    
+     
     public function viewUPDsortA() {
-            $bd = Model::table("users_person_data")->get()->sort("id", "desc")->send();
+            $bd = Model::table("users_person_data")->get()->sort("id", "asc")->send();
             $this->viewJSON($bd);   
     }
+    
+    public function viewUPDsortD() {
+            $bd = Model::table("users_person_data")->get()->sort("id", "desc")->send();
+            $this->viewJSON($bd);
+    }
+    
+   
 }
