@@ -32,11 +32,12 @@ $.ajax({
         }
     })
     
-$('#sortA').click($.ajax({
-    url: 'https://m.qzo.su/api/users/viewUPDsortA', 
-    type: 'GET',
-    datatype: 'json',
-    data: {},
-    success: console.log("Sort by ASC succsess"),
-
-});)
+//$('#sortA').click(
+//    $.ajax({
+//        url: 'https://m.qzo.su/api/users/viewUPDsortA', 
+//        type: 'GET',
+//        datatype: 'json',
+//        data: {},
+//        success: console.log("Sort by ASC succsess"),
+//
+//});)
