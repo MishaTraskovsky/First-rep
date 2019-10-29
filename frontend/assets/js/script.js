@@ -34,29 +34,4 @@ $.ajax({
         alert("Error is occured");
         }
     })
- 
-
-//$('#sortA').click(
-  //  $.ajax({
-  //      url: 'https://m.qzo.su/api/users/viewUPDsortA', 
-  //      type: 'GET',
-  //      datatype: 'json',
-  //      data: {},
-  //      success:    function(){
-  //                  //console.log("Sort by ASC succsess"),
-  //      table( data);
-  //      }
-  //      }))
- 
-//$('#sortD').click(
-  //  $.ajax({
-  //      url: 'https://m.qzo.su/api/users/viewUPDsortD', 
-  //      type: 'GET',
-  //      datatype: 'json',
-  //      data: {},
-  //      success: function (){
-  //                  table( data);
-  //                  //console.log("Sort by DESC succsess");
-  //               }   
-}))
 });
