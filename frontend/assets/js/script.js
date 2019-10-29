@@ -37,6 +37,6 @@ $('#sortA').click($.ajax({
     type: 'GET',
     datatype: 'json',
     data: {},
-    success: console.log("Sort by ASC succsess");
+    success: console.log("Sort by ASC succsess"),
 
 });)
