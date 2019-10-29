@@ -38,8 +38,10 @@ $('#sortA').click(
         type: 'GET',
         datatype: 'json',
         data: {},
-        success: console.log("Sort by ASC succsess"),
+        success: function (){
+                console.log("Sort by ASC succsess"),
                 $('.upd').append(html);
+                 }
 
 }))
  
@@ -49,8 +51,11 @@ $('#sortD').click(
         type: 'GET',
         datatype: 'json',
         data: {},
-        success: console.log("Sort by ASC succsess"),
+        success: function (){
+                console.log("Sort by DESC succsess"),
                 $('.upd').append(html);
+                 }
+
 
 }))
 
