@@ -46,7 +46,7 @@ $('#sortA').click(
                         }
                         $('.upd').append(html);
           }, 
-                console.log("Sort by ASC succsess"),
+                console.log("Sort by ASC succsess");
                
                 
 
@@ -66,7 +66,7 @@ $('#sortD').click(
                         }
                         $('.upd').append(html);
           },
-                console.log("Sort by DESC succsess"),
+                console.log("Sort by DESC succsess");
 
 
 }))
