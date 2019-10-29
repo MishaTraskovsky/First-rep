@@ -90,7 +90,7 @@ class PublicUsersController{
     
     public function viewUPDsortA(){
         $class = new Users();
-        $class -> viewUPDsortD();
+        $class -> viewUPDsortA();
     }
 }
     
