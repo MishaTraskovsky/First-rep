@@ -101,8 +101,8 @@ $('.sortD').click(function(){
             data: {id_card: id_card, phone: phone},
             success:  function(data){
                    console.log("New entry added"); 
-                }
-                      } 
+                      }
+                } 
                 });
     
     });    
