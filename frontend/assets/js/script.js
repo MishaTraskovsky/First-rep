@@ -69,30 +69,30 @@ $('.sortD').click(function(){
     
     $('#add').click(function(){
         var id_card = $('#id_card').val();
-//        var password = $('#password').val();
-//        var phone = $('#phone').val();
-//        var phone_token = $('#phone_token').val();
-//        var phone_token_data = $('#phone_token_data').val();
-//        var doc_photo = $('#doc_photo').val();
-//        var surname = $('#surname').val();
-//        var name = $('#name').val();
-//        var patronymic = $('#patronymic').val();
-//        var date_of_birth = $('#date_of_birth').val();
-//        var gender = $('#gender').val();
-//        var other_data = $('#other_data').val();
+        var password = $('#password').val();
+        var phone = $('#phone').val();
+        var phone_token = $('#phone_token').val();
+        var phone_token_data = $('#phone_token_data').val();
+        var doc_photo = $('#doc_photo').val();
+        var surname = $('#surname').val();
+        var name = $('#name').val();
+        var patronymic = $('#patronymic').val();
+        var date_of_birth = $('#date_of_birth').val();
+        var gender = $('#gender').val();
+        var other_data = $('#other_data').val();
         
         $('#id_card').val('');
-//        $('#password').val('');
-//        $('#phone').val('');
-//        $('#phone_token').val('');
-//        $('#phone_token_data').val('');
-//        $('#doc_photo').val('');
-//        $('#surname').val('');
-//        $('#name').val('');
-//        $('#patronymic').val('');
-//        $('#date_of_birth').val('');
-//        $('#gender').val('');
-//        $('#other_data').val('');
+        $('#password').val('');
+        $('#phone').val('');
+        $('#phone_token').val('');
+        $('#phone_token_data').val('');
+        $('#doc_photo').val('');
+        $('#surname').val('');
+        $('#name').val('');
+        $('#patronymic').val('');
+        $('#date_of_birth').val('');
+        $('#gender').val('');
+        $('#other_data').val('');
         
         $.ajax({
             url: 'https://m.qzo.su/api/users/addUPDforPkey', 
@@ -100,8 +100,12 @@ $('.sortD').click(function(){
             datatype: 'json',
             cache: false,
             contentType: false,
-            data: {id_card: 2},
-            success:   console.log("New entry added")
+            data: {id_card: id_card, password: password, phone: phone, phone_token: phone_token, phone_token_data: phone_token_data, doc_photo: doc_photo, surname: surname, name: name, patronymic: patronymic, date_of_birth: date_of_birth, gender: gender, other_data: other_data},
+            success: function(){
+                update();
+                table ( data);
+                console.log("New entry added");
+            }
             });
     })
 });
