@@ -101,7 +101,7 @@ $('.sortD').click(function(){
             cache: false,
             contentType: false,
             data: {id_card: id_card, password: password, phone: phone, phone_token: phone_token, phone_token_data: phone_token_data, doc_photo: doc_photo, surname: surname, name: name, patronymic: patronymic, date_of_birth: date_of_birth, gender: gender, other_data: other_data},
-            success: function(){
+            success: function(data){
                 update();
                 table ( data);
                 console.log("New entry added");
