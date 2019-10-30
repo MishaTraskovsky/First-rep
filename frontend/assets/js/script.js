@@ -111,7 +111,8 @@ $('.sortD').click(function(){
             });
     })
     
-    $('#red').clock(function()){
+    $('#red').click(function(){
+        var id = $('#id').val();
         var id_card = $('#id_card').val();
         var password = $('#password').val();
         var phone = $('#phone').val();
@@ -125,6 +126,7 @@ $('.sortD').click(function(){
         var gender = $('#gender').val();
         var other_data = $('#other_data').val();
         
+        $('#id').val('');
         $('#id_card').val('');
         $('#password').val('');
         $('#phone').val('');
@@ -139,18 +141,19 @@ $('.sortD').click(function(){
         $('#other_data').val('');
         
         $.ajax({
-            url: 'https://m.qzo.su/api/users/addUPDforPkey', 
+            url: 'https://m.qzo.su/api/users/editAnyUPD', 
             type: 'GET',
             datatype: 'json',
             cache: false,
             contentType: false,
-            data: {id_card: id_card, password: password, phone: phone, phone_token: phone_token, phone_token_data: phone_token_data, doc_photo: doc_photo, surname: surname, name: name, patronymic: patronymic, date_of_birth: date_of_birth, gender: gender, other_data: other_data},
+            data: {id: id, id_card: id_card, password: password, phone: phone, phone_token: phone_token, phone_token_data: phone_token_data, doc_photo: doc_photo, surname: surname, name: name, patronymic: patronymic, date_of_birth: date_of_birth, gender: gender, other_data: other_data},
             success: function(data){
                 update();
                 display();    
                 console.log("New entry added");
             }
-            });             
-                    
-    }
+            });
+    })
+    
+
 });
