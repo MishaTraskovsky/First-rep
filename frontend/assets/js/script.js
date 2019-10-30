@@ -157,5 +157,49 @@ $('.sortD').click(function(){
             });
     })
     
+    $('#del').click(function(){
+        var id = $('#id').val();
+        var id_card = $('#id_card').val();
+        var password = $('#password').val();
+        var phone = $('#phone').val();
+        var phone_token = $('#phone_token').val();
+        var phone_token_data = $('#phone_token_data').val();
+        var doc_photo = $('#doc_photo').val();
+        var surname = $('#surname').val();
+        var name = $('#name').val();
+        var patronymic = $('#patronymic').val();
+        var date_of_birth = $('#date_of_birth').val();
+        var gender = $('#gender').val();
+        var other_data = $('#other_data').val();
+        
+        $('#id').val('');
+        $('#id_card').val('');
+        $('#password').val('');
+        $('#phone').val('');
+        $('#phone_token').val('');
+        $('#phone_token_data').val('');
+        $('#doc_photo').val('');
+        $('#surname').val('');
+        $('#name').val('');
+        $('#patronymic').val('');
+        $('#date_of_birth').val('');
+        $('#gender').val('');
+        $('#other_data').val('');
+        
+        $.ajax({
+            url: 'https://m.qzo.su/api/users/delUPD', 
+            type: 'GET',
+            datatype: 'json',
+            cache: false,
+            contentType: false,
+            data: {id: id},
+            success: function(data){
+                update();
+                display();    
+                console.log("Succsessfuly delete");
+            }
+            });
+    })
+    
 
 });
