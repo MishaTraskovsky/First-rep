@@ -106,7 +106,7 @@ $('.sortD').click(function(){
                 //   console.log("New entry added"); 
               //  }
                   //    } 
-                });
+                })
     
     });    
 });
