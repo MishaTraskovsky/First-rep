@@ -98,6 +98,8 @@ $('.sortD').click(function(){
             url: 'https://m.qzo.su/api/users/addUPDforPkey', 
             type: 'GET',
             datatype: 'json',
+            cache: false,
+            contentType: false,
             data: {id_card: id_card, phone: phone},
             success:   console.log("New entry added")
             });
