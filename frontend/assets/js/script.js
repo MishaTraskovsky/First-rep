@@ -102,7 +102,7 @@ $('.sortD').click(function(){
             success:  function(data){
                    console.log("New entry added"); 
                       }
-                } 
+                }) 
                 });
     
     });    
