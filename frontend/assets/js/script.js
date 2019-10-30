@@ -81,18 +81,18 @@ $('.sortD').click(function(){
         var id = $('#gender').val();
         var id = $('#other_data').val();
         
-        var id = $('#id_card').val('');
-        var id = $('#password').val('');
-        var id = $('#phone').val('');
-        var id = $('#phone_token').val('');
-        var id = $('#phone_token_data').val('');
-        var id = $('#doc_photo').val('');
-        var id = $('#surname').val('');
-        var id = $('#name').val('');
-        var id = $('#patronymic').val('');
-        var id = $('#date_of_birth').val('');
-        var id = $('#gender').val('');
-        var id = $('#other_data').val('');
+        $('#id_card').val('');
+        $('#password').val('');
+        $('#phone').val('');
+        $('#phone_token').val('');
+        $('#phone_token_data').val('');
+        $('#doc_photo').val('');
+        $('#surname').val('');
+        $('#name').val('');
+        $('#patronymic').val('');
+        $('#date_of_birth').val('');
+        $('#gender').val('');
+        $('#other_data').val('');
         
         $.ajax({
             url: 'https://m.qzo.su/api/users/addUPDforPkey', 
@@ -100,8 +100,14 @@ $('.sortD').click(function(){
             datatype: 'json',
             data: {id_card: id_card, password: password, phone: phone, phone_token:phone_token, phone_token_data: phone_token_data, doc_photo: doc_photo, surname: surname, name: name, patronymic: patronymic, date_of_birth: date_of_birth, gender: gender, other_data: other_data},
             success:  function(data){
-                
-                
+                if(!empty(result)){
+                   update();                   
+                   table ( data);
+                   console.log("New entry added"); 
+                }
+                else(){
+                    
+                }
             } 
         });
     

@@ -72,9 +72,9 @@ class PublicUsersController{
         
     }
     
-    public function addUPDforUC(){
+    public function addUPDforPkey(){
         $class = new Users();
-        $class -> addUPDforUC();
+        $class -> addUPDforPkey();
         
     }
     
