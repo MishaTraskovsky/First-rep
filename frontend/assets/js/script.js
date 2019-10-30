@@ -30,7 +30,8 @@ function display() {$.ajax({
  type: 'GET',
  datatype: 'json',
  data: {},
- success: function (data) {
+ success: function (data
+ ) {
                         update();
                         table ( data);
                         console.log("downloaded")
