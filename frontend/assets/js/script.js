@@ -69,17 +69,17 @@ $('.sortD').click(function(){
     
     $('#add').click(function(){
         var id = $('#id_card').val();
-        var id = $('#password').val();
-        var id = $('#phone').val();
-        var id = $('#phone_token').val();
-        var id = $('#phone_token_data').val();
-        var id = $('#doc_photo').val();
-        var id = $('#surname').val();
-        var id = $('#name').val();
-        var id = $('#patronymic').val();
-        var id = $('#date_of_birth').val();
-        var id = $('#gender').val();
-        var id = $('#other_data').val();
+        var password = $('#password').val();
+        var phone = $('#phone').val();
+        var phone_token = $('#phone_token').val();
+        var phone_token_data = $('#phone_token_data').val();
+        var doc_photo = $('#doc_photo').val();
+        var surname = $('#surname').val();
+        var name = $('#name').val();
+        var patronymic = $('#patronymic').val();
+        var date_of_birth = $('#date_of_birth').val();
+        var gender = $('#gender').val();
+        var other_data = $('#other_data').val();
         
         $('#id_card').val('');
         $('#password').val('');
@@ -105,8 +105,8 @@ $('.sortD').click(function(){
                    table ( data);
                    console.log("New entry added"); 
                 }
-            } 
-        });
+                      } 
+                });
     
     });    
 });
