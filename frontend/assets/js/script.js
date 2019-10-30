@@ -68,8 +68,8 @@ $('.sortD').click(function(){
 });
     
     $('#add').click(function(){
-        int id = $('#id').val();
-        console.log(id)
+        var id = $('#id').val();
+        console.log(id);
     
     });    
 });
