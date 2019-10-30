@@ -100,11 +100,11 @@ $('.sortD').click(function(){
             datatype: 'json',
             data: {id_card: id_card, password: password, phone: phone, phone_token:phone_token, phone_token_data: phone_token_data, doc_photo: doc_photo, surname: surname, name: name, patronymic: patronymic, date_of_birth: date_of_birth, gender: gender, other_data: other_data},
             success:  function(data){
-                if(!empty(result)){
-                   update();                   
-                   table ( data);
-                   console.log("New entry added"); 
-                }
+                //if(!empty(result)){
+                //   update();                   
+                //   table ( data);
+                //   console.log("New entry added"); 
+              //  }
                       } 
                 });
     
