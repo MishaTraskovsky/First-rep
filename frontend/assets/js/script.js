@@ -99,13 +99,13 @@ $('.sortD').click(function(){
             type: 'GET',
             datatype: 'json',
             data: {id_card: id_card, phone: phone},
-            success:  function(data){
+            success: // function(data){
                 //if(!empty(result)){
                 //   update();                   
                 //   table ( data);
                 //   console.log("New entry added"); 
               //  }
-                      } 
+                  //    } 
                 });
     
     });    
