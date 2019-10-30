@@ -25,7 +25,7 @@ function update(){
 
 
     
-$.ajax({
+function display() {$.ajax({
  url: 'https://m.qzo.su/api/users/viewUPD', 
  type: 'GET',
  datatype: 'json',
@@ -38,6 +38,8 @@ $.ajax({
         alert("Error is occured");
         }
     });
+}
+display();
     
 $('.sortA').click(function(){
     $.ajax({
@@ -102,8 +104,7 @@ $('.sortD').click(function(){
             contentType: false,
             data: {id_card: id_card, password: password, phone: phone, phone_token: phone_token, phone_token_data: phone_token_data, doc_photo: doc_photo, surname: surname, name: name, patronymic: patronymic, date_of_birth: date_of_birth, gender: gender, other_data: other_data},
             success: function(data){
-                update();
-                table (data);
+                display();    
                 console.log("New entry added");
             }
             });
