@@ -150,7 +150,7 @@ $('.sortD').click(function(){
             success: function(data){
                 update();
                 display();    
-                console.log("New entry added");
+                console.log("Entry update");
             }
             });
     })
