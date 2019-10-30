@@ -31,6 +31,7 @@ function display() {$.ajax({
  datatype: 'json',
  data: {},
  success: function (data) {
+                        update();
                         table ( data);
                         console.log("downloaded")
           },
