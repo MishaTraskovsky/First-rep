@@ -105,9 +105,6 @@ $('.sortD').click(function(){
                    table ( data);
                    console.log("New entry added"); 
                 }
-                else(){
-                    
-                }
             } 
         });
     
