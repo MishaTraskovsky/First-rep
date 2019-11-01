@@ -1,5 +1,6 @@
 $(document).ready(function(){
- 
+    display();
+
     function table (data) {
         var data = jQuery.parseJSON(JSON.stringify(data));
         var html = '';
@@ -24,7 +25,7 @@ $(document).ready(function(){
     });
 
 
-    
+
     function display(){
         $.ajax({
         url: 'https://m.qzo.su/api/users/viewUPD', 
@@ -41,7 +42,6 @@ $(document).ready(function(){
               }    
         });
     }
-    display();
     
     $('.sortA').click(function(){
         $.ajax({
