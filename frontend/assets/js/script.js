@@ -42,7 +42,7 @@ $(document).ready(function(){
               }    
         });
     }
-    
+display();    
     $('.sortA').click(function(){
         $.ajax({
             url: 'https://m.qzo.su/api/users/viewUPDsortA', 
