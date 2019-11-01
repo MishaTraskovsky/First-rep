@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    display();
 
     function table (data) {
         var data = jQuery.parseJSON(JSON.stringify(data));
@@ -34,7 +33,7 @@ $(document).ready(function(){
         data: {},
         success:function (data){
                             update();
-                            table ( data);
+                            table (data);
                             console.log("downloaded")
                 },
         error:function() {
