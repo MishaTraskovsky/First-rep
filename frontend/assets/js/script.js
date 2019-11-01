@@ -42,7 +42,7 @@ $(document).ready(function(){
               }    
         });
     }
-display();    
+    
     $('.sortA').click(function(){
         $.ajax({
             url: 'https://m.qzo.su/api/users/viewUPDsortA', 
@@ -70,7 +70,7 @@ display();
                     }
         });
     });
-    
+display();    
     $('#add').click(function(){
         var id_card = $('#id_card').val();
         var password = $('#password').val();
